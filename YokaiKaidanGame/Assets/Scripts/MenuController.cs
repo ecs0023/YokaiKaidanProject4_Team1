@@ -23,18 +23,4 @@ public class MenuController : MonoBehaviour
     {
         Application.Quit();
     }
-    public void FirstLevel()
-    {
-        SceneManager.LoadScene("Level1");
-    }
-
-    public void SecondLevel() 
-    {
-        SceneManager.LoadScene("Level2");
-    }
-
-    public void ThirdLevel()
-    {
-        SceneManager.LoadScene("Level2");
-    }
 }
