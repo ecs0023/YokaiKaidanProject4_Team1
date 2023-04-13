@@ -25,6 +25,7 @@ public class EnemyController : MonoBehaviour
     private void FixedUpdate()
     {
         moveCharacter(movement);
+       
     }
 
     void moveCharacter(Vector2 direction)
