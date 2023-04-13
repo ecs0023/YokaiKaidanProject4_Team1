@@ -9,6 +9,7 @@ public class PlayerTestController : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D rb;
     private Vector2 moveDirection;
+    public int health;
 
     public void Start()
     {
