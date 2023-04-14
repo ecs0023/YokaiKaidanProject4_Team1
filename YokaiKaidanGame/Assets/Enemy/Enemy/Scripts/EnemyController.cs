@@ -1,18 +1,25 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
+
+    //This gets all needed game parts
     public float adjust;
     public float moveSpeed = 5f;
     public Transform player;
     public Rigidbody2D rb;
     private Vector2 movement;
+    public Animator anim;
+    public AudioSource enemysound;
 
     void Start()
     {
         rb=this.GetComponent<Rigidbody2D>();
+        anim=this.GetComponent<Animator>();
+        enemysound=this.GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -25,28 +32,26 @@ public class EnemyController : MonoBehaviour
     private void FixedUpdate()
     {
         moveCharacter(movement);
-       
     }
 
     void moveCharacter(Vector2 direction)
     {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
-
-    public void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "player")
+        if (other.gameObject.tag == "Player")
         {
-            Debug.Log("In Range");
+            anim.SetBool("isAggresive", true);
+            enemysound.Play();
         }
     }
-
-    public void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "player")
+        if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Left Range");
+            anim.SetBool("isAggresive", false);
+            enemysound.Stop();
         }
     }
-
 }
