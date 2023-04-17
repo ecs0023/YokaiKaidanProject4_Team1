@@ -44,6 +44,7 @@ public class EnemyController : MonoBehaviour
         {
             anim.SetBool("isAggresive", true);
             enemysound.Play();
+            Debug.Log("Player in Range");
         }
     }
     void OnTriggerExit2D(Collider2D other)
@@ -52,6 +53,7 @@ public class EnemyController : MonoBehaviour
         {
             anim.SetBool("isAggresive", false);
             enemysound.Stop();
+            Debug.Log("Player left Range");
         }
     }
 }
