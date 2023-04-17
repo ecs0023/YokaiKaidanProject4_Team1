@@ -12,6 +12,7 @@ public class PlayerTestController : MonoBehaviour
     public bool hasStagKey;
     public bool hasBearKey;
     private Vector2 moveDirection;
+    public int health;
 
     public void Start()
     {

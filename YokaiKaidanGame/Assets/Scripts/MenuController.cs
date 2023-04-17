@@ -6,9 +6,10 @@ using TMPro;
 
 public class MenuController : MonoBehaviour
 {
+    public AudioSource buttonclick;
     void Start()
     {
-
+        buttonclick= GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -17,24 +18,12 @@ public class MenuController : MonoBehaviour
 
     public void NextLevel()
     {
+        buttonclick.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void QuitGame()
     {
+        buttonclick.Play();
         Application.Quit();
-    }
-    public void FirstLevel()
-    {
-        SceneManager.LoadScene("Level1");
-    }
-
-    public void SecondLevel() 
-    {
-        SceneManager.LoadScene("Level2");
-    }
-
-    public void ThirdLevel()
-    {
-        SceneManager.LoadScene("Level2");
     }
 }
