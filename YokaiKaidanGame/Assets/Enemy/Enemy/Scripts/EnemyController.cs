@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
 
     //This gets all needed game parts
     public float adjust;
-    public float moveSpeed = 5f;
+    public float moveSpeed =0f;
     public Transform player;
     public Rigidbody2D rb;
     private Vector2 movement;
@@ -42,18 +42,20 @@ public class EnemyController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            anim.SetBool("isAggresive", true);
+            anim.SetBool("isChasing", true);
             enemysound.Play();
             Debug.Log("Player in Range");
+            moveSpeed = 5f;
         }
     }
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            anim.SetBool("isAggresive", false);
+            anim.SetBool("isChasing", false);
             enemysound.Stop();
             Debug.Log("Player left Range");
+            moveSpeed = 0f;
         }
     }
 }
