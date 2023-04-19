@@ -1,14 +1,12 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-public class EnemyController : MonoBehaviour
-{
 
+public class SatoEnemyController : MonoBehaviour
+{
     //This gets all needed game parts
     public float adjust;
-    public float moveSpeed =0f;
+    public float moveSpeed = 0f;
     public Transform player;
     public Rigidbody2D rb;
     private Vector2 movement;
@@ -17,15 +15,15 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        rb=this.GetComponent<Rigidbody2D>();
-        anim=this.GetComponent<Animator>();
-        enemysound=this.GetComponent<AudioSource>();
+        rb = this.GetComponent<Rigidbody2D>();
+        anim = this.GetComponent<Animator>();
+        enemysound = this.GetComponent<AudioSource>();
     }
     void Update()
     {
         Vector3 direction = player.position - transform.position;
-        float angle= Mathf.Atan2(direction.y, direction.x)*Mathf.Rad2Deg;
-        rb.rotation = angle-adjust;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        rb.rotation = angle - adjust;
         direction.Normalize();
         movement = direction;
     }
@@ -45,7 +43,7 @@ public class EnemyController : MonoBehaviour
             anim.SetBool("isChasing", true);
             enemysound.Play();
             Debug.Log("Player in Range");
-            moveSpeed = 4f;
+            moveSpeed = 2f;
         }
     }
     void OnTriggerExit2D(Collider2D other)
