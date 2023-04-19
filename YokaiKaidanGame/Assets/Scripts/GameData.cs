@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class GameData : MonoBehaviour
 {
-    public int playerHealth=2;
-    public int enemyHealth=2;
-    public BoxCollider2D playerBoxCollider;
-    public BoxCollider2D enemyBoxCollider;
-    public int keycount= 3;
+    public static int PlayerHealth = 2;
+    public int SatoHealth=5;
+    public int OtsuyaHealth = 2;
+    public int OiwaHealth = 2;
 
     void Start()
     {
-        playerBoxCollider= GetComponent<BoxCollider2D>();
-        enemyBoxCollider= GetComponent<BoxCollider2D>();
+
     }
     void Update()
     {
         
     }
 }
+
