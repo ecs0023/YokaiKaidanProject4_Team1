@@ -14,14 +14,15 @@ public class EnemyController : MonoBehaviour
     private Vector2 movement;
     public Animator anim;
     public AudioSource enemysound;
-    public GameController script;
+    public GameData script;
+    
 
     void Start()
     {
         rb=this.GetComponent<Rigidbody2D>();
         anim=this.GetComponent<Animator>();
         enemysound=this.GetComponent<AudioSource>();
-        script.PlayerHealth = 5;
+        script=this.GetComponent<GameData>();
     }
     void Update()
     {
@@ -33,7 +34,7 @@ public class EnemyController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            
+            script.PlayerHealth = 3;
         }
     }
     private void FixedUpdate()
