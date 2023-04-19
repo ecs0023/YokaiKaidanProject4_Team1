@@ -312,7 +312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.18, y: 3.54, z: -10}
+  m_LocalPosition: {x: -8.51, y: 3.58, z: -10}
   m_LocalScale: {x: 0.43432, y: 0.43432, z: 0.43432}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -566,6 +566,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 5
   m_TargetDisplay: 0
+--- !u!61 &859840015 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 258777609680709172, guid: e4174437c5fed654e806e30914cd2995, type: 3}
+  m_PrefabInstance: {fileID: 258777609401842052}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1153349239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,7 +1104,6 @@ GameObject:
   - component: {fileID: 2110622740}
   - component: {fileID: 2110622743}
   - component: {fileID: 2110622742}
-  - component: {fileID: 2110622744}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1167,8 +1171,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110622739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.18, y: 3.54, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -8.51, y: 3.58, z: 0}
+  m_LocalScale: {x: 0.23920318, y: 0.23920318, z: 0.23920318}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1213,32 +1217,7 @@ MonoBehaviour:
   hasStagKey: 0
   hasBearKey: 0
   health: 5
---- !u!61 &2110622744
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110622739}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.016259879, y: 0.020221256}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.43173802, y: 0.5147596}
-  m_EdgeRadius: 0
+  anim: {fileID: 0}
 --- !u!1001 &258777609401842052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1254,6 +1233,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2110622741}
+    - target: {fileID: 258777609680709161, guid: e4174437c5fed654e806e30914cd2995, type: 3}
+      propertyPath: boxCollider
+      value: 
+      objectReference: {fileID: 859840015}
     - target: {fileID: 258777609680709174, guid: e4174437c5fed654e806e30914cd2995, type: 3}
       propertyPath: m_RootOrder
       value: 6

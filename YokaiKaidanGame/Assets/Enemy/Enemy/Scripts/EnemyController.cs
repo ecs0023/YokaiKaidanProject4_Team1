@@ -14,7 +14,6 @@ public class EnemyController : MonoBehaviour
     private Vector2 movement;
     public Animator anim;
     public AudioSource enemysound;
-    public GameData script;
     
 
     void Start()
@@ -22,7 +21,6 @@ public class EnemyController : MonoBehaviour
         rb=this.GetComponent<Rigidbody2D>();
         anim=this.GetComponent<Animator>();
         enemysound=this.GetComponent<AudioSource>();
-        script=this.GetComponent<GameData>();
     }
     void Update()
     {
@@ -31,11 +29,6 @@ public class EnemyController : MonoBehaviour
         rb.rotation = angle-adjust;
         direction.Normalize();
         movement = direction;
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            script.PlayerHealth = 3;
-        }
     }
     private void FixedUpdate()
     {
