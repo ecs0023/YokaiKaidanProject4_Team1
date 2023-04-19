@@ -12,12 +12,15 @@ public class SatoEnemyController : MonoBehaviour
     private Vector2 movement;
     public Animator anim;
     public AudioSource enemysound;
+    public BoxCollider2D range;
+    
 
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         anim = this.GetComponent<Animator>();
         enemysound = this.GetComponent<AudioSource>();
+        range= GetComponentInChildren<BoxCollider2D>();
     }
     void Update()
     {
@@ -26,6 +29,8 @@ public class SatoEnemyController : MonoBehaviour
         rb.rotation = angle - adjust;
         direction.Normalize();
         movement = direction;
+
+        
     }
     private void FixedUpdate()
     {
@@ -42,7 +47,6 @@ public class SatoEnemyController : MonoBehaviour
         {
             anim.SetBool("isChasing", true);
             enemysound.Play();
-            Debug.Log("Player in Range");
             moveSpeed = 2f;
         }
     }
@@ -52,8 +56,8 @@ public class SatoEnemyController : MonoBehaviour
         {
             anim.SetBool("isChasing", false);
             enemysound.Stop();
-            Debug.Log("Player left Range");
             moveSpeed = 0f;
         }
     }
+    
 }
