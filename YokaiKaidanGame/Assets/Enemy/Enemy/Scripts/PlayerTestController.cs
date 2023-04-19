@@ -13,12 +13,14 @@ public class PlayerTestController : MonoBehaviour
     public bool hasBearKey;
     private Vector2 moveDirection;
     public int health;
+    public Animator anim;
 
     public void Start()
     {
         hasHoundKey = false;
         hasBearKey = false;
         hasStagKey = false;
+        anim = this.GetComponent<Animator>();
     }
     public void Update()
     {
@@ -48,6 +50,7 @@ public class PlayerTestController : MonoBehaviour
         {
             hasHoundKey = true;
             Destroy(other.gameObject);
+            Debug.Log("You've found the Hound Key.");
         }
 
         if (other.gameObject.name == "HoundDoor")
@@ -58,7 +61,7 @@ public class PlayerTestController : MonoBehaviour
             }
             else
             {
-                Debug.Log("You need a key to open this door");
+                Debug.Log("You need the Hound Key to open this door");
             }
         }
 
@@ -66,6 +69,7 @@ public class PlayerTestController : MonoBehaviour
         {
             hasBearKey = true;
             Destroy(other.gameObject);
+            Debug.Log("You've found the Bear Key.");
         }
 
         if (other.gameObject.name == "BearDoor")
@@ -76,7 +80,7 @@ public class PlayerTestController : MonoBehaviour
             }
             else
             {
-                Debug.Log("You need a key to open this door");
+                Debug.Log("You need the Bear Key to open this door");
             }
         }
 
@@ -84,6 +88,7 @@ public class PlayerTestController : MonoBehaviour
         {
             hasStagKey = true;
             Destroy(other.gameObject);
+            Debug.Log("You've found the Stag Key.");
         }
 
         if (other.gameObject.name == "StagDoor")
@@ -94,7 +99,7 @@ public class PlayerTestController : MonoBehaviour
             }
             else
             {
-                Debug.Log("You need a key to open this door");
+                Debug.Log("You need the Stag Key to open this door");
             }
         }
     }
