@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class GameData : MonoBehaviour
 {
-    public static int PlayerHealth = 2;
-    public int SatoHealth=5;
-    public int OtsuyaHealth = 2;
-    public int OiwaHealth = 2;
+    public AttributesManager playerAtm;
+    public AttributesManager enemyAtm;
 
-    void Start()
-    {
-
-    }
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            playerAtm.DealDamage(enemyAtm.gameObject);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            enemyAtm.DealDamage(playerAtm.gameObject);
+        }
     }
 }
 

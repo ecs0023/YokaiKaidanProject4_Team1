@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7644479026022153285}
   - component: {fileID: 7644479026022153284}
   - component: {fileID: 7644479026022153307}
+  - component: {fileID: 3547389968003828294}
   m_Layer: 0
   m_Name: SatoPreFab
   m_TagString: Enemy
@@ -290,6 +291,20 @@ MonoBehaviour:
   anim: {fileID: 7644479026022153284}
   enemysound: {fileID: 7644479026022153285}
   range: {fileID: 0}
+--- !u!114 &3547389968003828294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644479026022153306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ab1d9d9cf11d44eabedfb7e1f9a0bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  attack: 2
 --- !u!1 &8839588759424503818
 GameObject:
   m_ObjectHideFlags: 0
