@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     private Vector2 movement;
     public Animator anim;
     public AudioSource enemysound;
+    
 
     void Start()
     {
