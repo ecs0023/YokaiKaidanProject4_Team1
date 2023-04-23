@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DoorText : MonoBehaviour
+public class DoorText2 : MonoBehaviour
 {
     public GameObject Canvas;
 
@@ -11,7 +11,7 @@ public class DoorText : MonoBehaviour
     {
         Canvas.gameObject.SetActive(false);
     }
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
