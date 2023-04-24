@@ -6283,6 +6283,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoundKey (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7896331255804071932, guid: e084d867b6d524c47af8f0e5cbcb8016, type: 3}
+      propertyPath: m_Radius
+      value: 0.43068916
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896331255804071932, guid: e084d867b6d524c47af8f0e5cbcb8016, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.047355786
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896331255804071932, guid: e084d867b6d524c47af8f0e5cbcb8016, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.010000004
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e084d867b6d524c47af8f0e5cbcb8016, type: 3}
 --- !u!1 &1231275877
