@@ -11,6 +11,7 @@ public class PlayerTestController : MonoBehaviour
     public bool hasHoundKey;
     public bool hasStagKey;
     public bool hasBearKey;
+    public bool flashlighton;
     private Vector2 moveDirection;
     public int health;
     public Animator anim;
@@ -21,11 +22,11 @@ public class PlayerTestController : MonoBehaviour
         hasBearKey = false;
         hasStagKey = false;
         anim = this.GetComponent<Animator>();
+        flashlighton = false;
     }
     public void Update()
     {
         ProcessInputs();
-
     }
 
     public void FixedUpdate()
