@@ -5,18 +5,18 @@ using UnityEngine;
 public class GameData : MonoBehaviour
 {
     public AttributesManager playerAtm;
-    public AttributesManager enemyAtm;
-
+    public AttributesManager OtsuyaAtm;
+    
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.T))
         {
-            playerAtm.DealDamage(enemyAtm.gameObject);
+            playerAtm.DealDamage(OtsuyaAtm.gameObject);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
-            enemyAtm.DealDamage(playerAtm.gameObject);
+            OtsuyaAtm.DealDamage(playerAtm.gameObject);
         }
     }
 }
