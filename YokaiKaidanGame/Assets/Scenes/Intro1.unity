@@ -311,21 +311,31 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Intro Goes Here
+  m_text: "Okinawa Island, Japan - 1914\r\n\r\n\tYou are Mogami Toshi, a freelance
+    journalist, who has heard the rumors of the infamous Sato Manor on the outskirts
+    of his village. Over a hundred years ago the master of the house was having an
+    affair with one of his house servants. His wife, after discovering this affair,
+    killed his mistress and then herself, cursing Sato with her dying breath.\r\n\r\n\tSato
+    began seeing his deceased wife wandering the halls of their manor, hearing her
+    cries throughout the night. Sato began to lose his mind and began killing all
+    of his servants. Still, he heard her cries. He retreated to the dojo behind the
+    manor and sealed himself inside to escape his torment.\r\n\r\nNo one has entered
+    the manor since\u2026\r\n\r\nUntil now.\r \n\nPress E to Pickup Keys. Click Door
+    to Unlock\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5bcda91f7666e494bb2b6b2a0864cfdf, type: 2}
-  m_sharedMaterial: {fileID: 3838509879333324120, guid: 5bcda91f7666e494bb2b6b2a0864cfdf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190227
-  m_fontColor: {r: 0.5754717, g: 0, b: 0, a: 1}
+    rgba: 4294177779
+  m_fontColor: {r: 0.9528302, g: 0.9528302, b: 0.9528302, a: 1}
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 0.050980397, g: 0, b: 0, a: 1}
+    topLeft: {r: 1, g: 0.9779874, b: 0.9779874, a: 1}
     topRight: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
     bottomLeft: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
@@ -338,8 +348,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -374,7 +384,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -719.28204, y: -82.57613, z: -396.4697, w: -386.45633}
+  m_margin: {x: -719.28204, y: -82.57613, z: -396.4697, w: -456.36487}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

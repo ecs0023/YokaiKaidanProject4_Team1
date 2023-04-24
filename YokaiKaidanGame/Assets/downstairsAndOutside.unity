@@ -537,7 +537,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5285,7 +5285,7 @@ MonoBehaviour:
   m_Follow: {fileID: 940222507}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 4
+    OrthographicSize: 6
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -7479,6 +7479,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 326466144356807618, guid: e0245efec43f9934ba2bd4f572cedce1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 326466144356807618, guid: e0245efec43f9934ba2bd4f572cedce1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 326466144356807618, guid: e0245efec43f9934ba2bd4f572cedce1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 326466144356807618, guid: e0245efec43f9934ba2bd4f572cedce1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 326466144356807618, guid: e0245efec43f9934ba2bd4f572cedce1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 326466144356807618, guid: e0245efec43f9934ba2bd4f572cedce1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 841636745310636585, guid: e0245efec43f9934ba2bd4f572cedce1, type: 3}
       propertyPath: MinDistance
       value: 0.9547882
@@ -7581,6 +7605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 841636745310636591, guid: e0245efec43f9934ba2bd4f572cedce1, type: 3}
+    - {fileID: 7049647803152714479, guid: e0245efec43f9934ba2bd4f572cedce1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e0245efec43f9934ba2bd4f572cedce1, type: 3}
 --- !u!1 &2069318004
 GameObject:
