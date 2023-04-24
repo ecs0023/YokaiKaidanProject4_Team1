@@ -45,62 +45,83 @@ public class PlayerTestController : MonoBehaviour
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.name == "HoundKey")
         {
-            hasHoundKey = true;
-            Destroy(other.gameObject);
-            Debug.Log("You've found the Hound Key.");
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                hasHoundKey = true;
+                Destroy(other.gameObject);
+                Debug.Log("You've found the Hound Key.");
+            }
         }
 
         if (other.gameObject.name == "HoundDoor")
         {
-            if (hasHoundKey == true)
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                Destroy(other.gameObject);
-            }
-            else
-            {
-                Debug.Log("You need the Hound Key to open this door");
+                if (hasHoundKey == true)
+                {
+
+                    Destroy(other.gameObject);
+                    Debug.Log("HoundKey Activated");
+                }
+                else
+                {
+                    Debug.Log("You need the Hound Key to open this door");
+                }
             }
         }
 
         if (other.gameObject.name == "BearKey")
         {
-            hasBearKey = true;
-            Destroy(other.gameObject);
-            Debug.Log("You've found the Bear Key.");
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                hasBearKey = true;
+                Destroy(other.gameObject);
+                Debug.Log("You've found the Bear Key.");
+            }
         }
 
         if (other.gameObject.name == "BearDoor")
         {
-            if (hasBearKey == true)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                Destroy(other.gameObject);
-            }
-            else
-            {
-                Debug.Log("You need the Bear Key to open this door");
+
+                if (hasBearKey == true)
+                {
+                    Destroy(other.gameObject);
+                }
+                else
+                {
+                    Debug.Log("You need the Bear Key to open this door");
+                }
             }
         }
 
         if (other.gameObject.name == "StagKey")
         {
-            hasStagKey = true;
-            Destroy(other.gameObject);
-            Debug.Log("You've found the Stag Key.");
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                hasStagKey = true;
+                Destroy(other.gameObject);
+                Debug.Log("You've found the Stag Key.");
+            }
         }
 
         if (other.gameObject.name == "StagDoor")
         {
-            if (hasStagKey == true)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                Destroy(other.gameObject);
-            }
-            else
-            {
-                Debug.Log("You need the Stag Key to open this door");
+                if (hasStagKey == true)
+                {
+                    Destroy(other.gameObject);
+                }
+                else
+                {
+                    Debug.Log("You need the Stag Key to open this door");
+                }
             }
         }
     }
