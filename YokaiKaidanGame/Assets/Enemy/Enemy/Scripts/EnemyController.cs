@@ -2,24 +2,31 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
 
     //This gets all needed game parts
     public float adjust;
-    public float moveSpeed =0f;
+    public float moveSpeed =2f;
     public Transform player;
     public Rigidbody2D rb;
     private Vector2 movement;
     public Animator anim;
     public AudioSource enemysound;
+    public int PlayerHealth = 3;
+    public GameObject Canvas;
+    public SpriteRenderer PlayerRend;
 
     void Start()
     {
-        rb=this.GetComponent<Rigidbody2D>();
+        Canvas.gameObject.SetActive(false);
+        rb =this.GetComponent<Rigidbody2D>();
         anim=this.GetComponent<Animator>();
         enemysound=this.GetComponent<AudioSource>();
+        PlayerRend=gameObject.GetComponent<SpriteRenderer>();
+        
     }
     void Update()
     {
@@ -45,7 +52,14 @@ public class EnemyController : MonoBehaviour
             anim.SetBool("isChasing", true);
             enemysound.Play();
             Debug.Log("Player in Range");
-            moveSpeed = 4f;
+            if (PlayerHealth > 0)
+            {
+                PlayerHealth--;
+            }
+            if(PlayerHealth<=0)
+            {
+                Canvas.gameObject.SetActive(true);
+            }
         }
     }
     void OnTriggerExit2D(Collider2D other)
@@ -55,7 +69,7 @@ public class EnemyController : MonoBehaviour
             anim.SetBool("isChasing", false);
             enemysound.Stop();
             Debug.Log("Player left Range");
-            moveSpeed = 0f;
         }
     }
+
 }

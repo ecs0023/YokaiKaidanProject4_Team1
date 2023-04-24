@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class GameData : MonoBehaviour
 {
-    public int playerHealth=2;
-    public int enemyHealth=2;
-    public BoxCollider2D playerBoxCollider;
-    public BoxCollider2D enemyBoxCollider;
-    public int keycount= 3;
-
-    void Start()
-    {
-        playerBoxCollider= GetComponent<BoxCollider2D>();
-        enemyBoxCollider= GetComponent<BoxCollider2D>();
-    }
+    public AttributesManager playerAtm;
+    public AttributesManager OtsuyaAtm;
+    
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            playerAtm.DealDamage(OtsuyaAtm.gameObject);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            OtsuyaAtm.DealDamage(playerAtm.gameObject);
+        }
     }
 }
+
