@@ -26,4 +26,8 @@ public class MenuController : MonoBehaviour
         buttonclick.Play();
         Application.Quit();
     }
+    public void Restart()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
