@@ -14,11 +14,13 @@ public class EnemyController : MonoBehaviour
     private Vector2 movement;
     public Animator anim;
     public AudioSource enemysound;
-    
+    public int PlayerHealth = 3;
+    public GameObject Canvas;
 
     void Start()
     {
-        rb=this.GetComponent<Rigidbody2D>();
+        Canvas.gameObject.SetActive(false);
+        rb =this.GetComponent<Rigidbody2D>();
         anim=this.GetComponent<Animator>();
         enemysound=this.GetComponent<AudioSource>();
     }
@@ -46,7 +48,15 @@ public class EnemyController : MonoBehaviour
             anim.SetBool("isChasing", true);
             enemysound.Play();
             Debug.Log("Player in Range");
-            moveSpeed = 4f;
+            moveSpeed = 2.5f;
+            if (PlayerHealth > 0)
+            {
+                PlayerHealth--;
+            }
+            if(PlayerHealth<=0)
+            {
+                Canvas.gameObject.SetActive(true);
+            }
         }
     }
     void OnTriggerExit2D(Collider2D other)
