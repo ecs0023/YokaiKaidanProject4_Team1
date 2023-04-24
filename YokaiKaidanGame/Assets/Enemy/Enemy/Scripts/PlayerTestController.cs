@@ -59,7 +59,7 @@ public class PlayerTestController : MonoBehaviour
 
         if (other.gameObject.name == "HoundDoor")
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (hasHoundKey == true)
                 {
