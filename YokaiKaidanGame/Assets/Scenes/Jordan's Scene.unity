@@ -136,9 +136,9 @@ GameObject:
   - component: {fileID: 93767695}
   - component: {fileID: 93767694}
   - component: {fileID: 93767693}
-  - component: {fileID: 93767698}
   - component: {fileID: 93767699}
   - component: {fileID: 93767700}
+  - component: {fileID: 93767701}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -163,6 +163,7 @@ MonoBehaviour:
   hasHoundKey: 0
   hasStagKey: 0
   hasBearKey: 0
+  flashlighton: 0
   health: 0
   anim: {fileID: 0}
 --- !u!61 &93767694
@@ -211,7 +212,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &93767696
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -280,18 +281,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &93767698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93767692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8045b77abe7734660aa93b6f3b54d834, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &93767699
 Animator:
   serializedVersion: 5
@@ -325,6 +314,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12ef3dc8c8f764232a262b8e83ce2e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &93767701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93767692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b947a3b310e564e4c92262fadb831004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lantern: {fileID: 1597291484}
 --- !u!1 &177816378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,6 +1035,7 @@ GameObject:
   - component: {fileID: 1597291485}
   - component: {fileID: 1597291486}
   - component: {fileID: 1597291487}
+  - component: {fileID: 1597291488}
   m_Layer: 0
   m_Name: lantern
   m_TagString: Untagged
@@ -1146,6 +1149,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12ef3dc8c8f764232a262b8e83ce2e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1597291488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597291484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ab1d9d9cf11d44eabedfb7e1f9a0bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  attack: 1
 --- !u!1 &1679681087
 GameObject:
   m_ObjectHideFlags: 0
