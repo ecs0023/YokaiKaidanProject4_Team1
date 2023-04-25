@@ -41,6 +41,11 @@ public class EnemyController : MonoBehaviour
         rb.rotation = angle-adjust;
         direction.Normalize();
         movement = direction;
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            DealDamage();
+        }
     }
     private void FixedUpdate()
     {
@@ -64,7 +69,7 @@ public class EnemyController : MonoBehaviour
 
     #endregion
     //EndMovement
-    void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "player")
         {
@@ -79,7 +84,7 @@ public class EnemyController : MonoBehaviour
     }
     private void DealDamage()
     {
-        playerscript.health-=1;
+        playerscript.health--;
     }
 
 }
