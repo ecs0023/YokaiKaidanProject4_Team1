@@ -4,32 +4,38 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
+
 public class EnemyController : MonoBehaviour
 {
 
     //This gets all needed game parts
+    #region
     public float adjust;
     public float moveSpeed =2f;
     public Transform player;
     public Rigidbody2D rb;
     private Vector2 movement;
-    public Animator anim;
     public AudioSource enemysound;
-    public int PlayerHealth = 3;
-    public GameObject Canvas;
-    public SpriteRenderer PlayerRend;
-
+    private float distance;
+    public float range;
+    public Animator anim;
+    public PlayerHealth playerscript;
+    #endregion
     void Start()
     {
-        Canvas.gameObject.SetActive(false);
         rb =this.GetComponent<Rigidbody2D>();
-        anim=this.GetComponent<Animator>();
-        enemysound=this.GetComponent<AudioSource>();
-        PlayerRend=gameObject.GetComponent<SpriteRenderer>();
-        
+        enemysound = this.GetComponent<AudioSource>();  
+        anim= this.GetComponent<Animator>();
+        playerscript.GetComponent<PlayerHealth>();
     }
+    //EnemyMovement
+    #region
     void Update()
     {
+        distance = Vector2.Distance(transform.position, player.transform.position);
         Vector3 direction = player.position - transform.position;
         float angle= Mathf.Atan2(direction.y, direction.x)*Mathf.Rad2Deg;
         rb.rotation = angle-adjust;
@@ -38,38 +44,42 @@ public class EnemyController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        moveCharacter(movement);
+        if (distance < range)
+        {
+            moveCharacter(movement);
+            anim.SetBool("isChasing", true);
+        }
+        else
+        {
+            anim.SetBool("isChasing", false);
+        }
+        
     }
+
 
     void moveCharacter(Vector2 direction)
     {
-        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+            rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
-    void OnTriggerEnter2D(Collider2D other)
+
+    #endregion
+    //EndMovement
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.tag == "Player")
+        if (collision.tag == "player")
         {
-            anim.SetBool("isChasing", true);
             enemysound.Play();
-            Debug.Log("Player in Range");
-            if (PlayerHealth > 0)
-            {
-                PlayerHealth--;
-            }
-            if(PlayerHealth<=0)
-            {
-                Canvas.gameObject.SetActive(true);
-            }
+            DealDamage();
+            anim.SetBool("isAttacking",true);
         }
     }
-    void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            anim.SetBool("isChasing", false);
-            enemysound.Stop();
-            Debug.Log("Player left Range");
-        }
+        anim.SetBool("isAttacking",false);
+    }
+    private void DealDamage()
+    {
+        playerscript.health-=1;
     }
 
 }
