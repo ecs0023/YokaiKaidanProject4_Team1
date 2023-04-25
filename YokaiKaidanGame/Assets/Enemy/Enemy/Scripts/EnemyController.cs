@@ -64,7 +64,7 @@ public class EnemyController : MonoBehaviour
 
     #endregion
     //EndMovement
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "player")
         {
@@ -75,7 +75,7 @@ public class EnemyController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        anim.SetBool("isAttacking",false);
+        anim.SetBool("isAttacking", false);
     }
     private void DealDamage()
     {
