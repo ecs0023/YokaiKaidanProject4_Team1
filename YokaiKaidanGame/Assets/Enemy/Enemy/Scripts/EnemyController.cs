@@ -25,6 +25,8 @@ public class EnemyController : MonoBehaviour
     public Animator anim;
     public PlayerHealth playerscript;
     public int damage;
+    private float timer;
+    private float cooldown = 0.5f;
     #endregion
     void Start()
     {
@@ -54,9 +56,11 @@ public class EnemyController : MonoBehaviour
         if (distance < range)
         {
             moveCharacter(movement);
+            anim.SetBool("isChasing", true);
         }
         else
         {
+            anim.SetBool("isChasing", false);
         }
         
     }
@@ -69,22 +73,25 @@ public class EnemyController : MonoBehaviour
 
     #endregion
     //EndMovement
-    void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D other)
     {
-        if (collision.tag == "Player")
+        if (other.tag == "Player")
         {
-            Debug.Log("In range");
-            DealDamageToPlayer();
-            anim.SetBool("isAttacking", true);
+            if (Time.time > timer)
+            {
+
+                timer = Time.time + cooldown;
+                // Damage the enemy
+                DealDamageToPlayer();
+
+            }
+            
+            
         }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        anim.SetBool("isAttacking", false);
     }
     private void DealDamageToPlayer()
     {
-        playerscript.health -= 2;
+        playerscript.health -= 1;
     }
 
 }
