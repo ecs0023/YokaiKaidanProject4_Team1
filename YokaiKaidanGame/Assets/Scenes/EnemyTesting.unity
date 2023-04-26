@@ -1434,7 +1434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8510619470797204426, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.41
+      value: 6.43
       objectReference: {fileID: 0}
     - target: {fileID: 8510619470797204426, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1476,5 +1476,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Otsuya
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8153338751585987547, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
