@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 19ec994b52b15f64298ee8e4e2fce781
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Intro1.unity
     guid: 9428b8ab8eb522144974a8edef2c9690
+  - enabled: 1
+    path: Assets/Scenes/EnemyTesting.unity
+    guid: 241a26dd5725d00419ba82d0f4faa17f
   - enabled: 0
     path: Assets/downstairsAndOutside.unity
     guid: f0caec83e0a8f4a9ab305cbb31fadaa8
@@ -26,7 +29,4 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/upstairs.unity
     guid: 5f0bacd73bebf4ad28e1764374268a10
-  - enabled: 1
-    path: Assets/Scenes/EnemyTesting.unity
-    guid: 241a26dd5725d00419ba82d0f4faa17f
   m_configObjects: {}

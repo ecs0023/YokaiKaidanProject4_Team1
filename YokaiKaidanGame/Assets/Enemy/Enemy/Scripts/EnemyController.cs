@@ -6,16 +6,15 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class EnemyController : MonoBehaviour
 {
 
     //This gets all needed game parts
     #region
-    public int health=2;
+    public int health = 2;
     public float adjust;
-    public float moveSpeed =2f;
+    public float moveSpeed = 2f;
     public Transform player;
     public Rigidbody2D rb;
     private Vector2 movement;
@@ -30,9 +29,9 @@ public class EnemyController : MonoBehaviour
     #endregion
     void Start()
     {
-        rb =this.GetComponent<Rigidbody2D>();
-        enemysound = this.GetComponent<AudioSource>();  
-        anim= this.GetComponent<Animator>();
+        rb = this.GetComponent<Rigidbody2D>();
+        enemysound = this.GetComponent<AudioSource>();
+        anim = this.GetComponent<Animator>();
         playerscript.GetComponent<PlayerHealth>();
     }
     //EnemyMovement
@@ -41,14 +40,21 @@ public class EnemyController : MonoBehaviour
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector3 direction = player.position - transform.position;
-        float angle= Mathf.Atan2(direction.y, direction.x)*Mathf.Rad2Deg;
-        rb.rotation = angle-adjust;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        rb.rotation = angle - adjust;
         direction.Normalize();
         movement = direction;
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (health<=0)
         {
-            DealDamageToPlayer();
+            
+            anim.SetTrigger("death");
+            Destroy(gameObject);
+
+        }
+        else
+        {
+            anim.ResetTrigger("death");
         }
     }
     private void FixedUpdate()
@@ -62,7 +68,7 @@ public class EnemyController : MonoBehaviour
         {
             anim.SetBool("isChasing", false);
         }
-        
+
     }
 
 
@@ -73,25 +79,27 @@ public class EnemyController : MonoBehaviour
 
     #endregion
     //EndMovement
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            if (Time.time > timer)
-            {
+                    timer = Time.time + cooldown;
+                    DealDamageToPlayer();
+                    anim.SetTrigger("isAttacking");
 
-                timer = Time.time + cooldown;
-                // Damage the enemy
-                DealDamageToPlayer();
-
-            }
-            
-            
         }
+
+        
+
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        anim.ResetTrigger("isAttacking");
+    }
+
     private void DealDamageToPlayer()
     {
-        playerscript.health -= 1;
+        playerscript.health -= damage;
     }
-
 }
+

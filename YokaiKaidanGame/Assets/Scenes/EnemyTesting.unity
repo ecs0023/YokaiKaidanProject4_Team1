@@ -152,7 +152,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981101850}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Follow: {fileID: 981101854}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 15
+    OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -531,7 +531,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1340,11 +1340,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4109967185984466425, guid: ad56293b4b8c90840b7566610be7b035, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.44
+      value: 5.63
       objectReference: {fileID: 0}
     - target: {fileID: 4109967185984466425, guid: ad56293b4b8c90840b7566610be7b035, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.13
+      value: -1.15
       objectReference: {fileID: 0}
     - target: {fileID: 4109967185984466425, guid: ad56293b4b8c90840b7566610be7b035, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1377,6 +1377,10 @@ PrefabInstance:
     - target: {fileID: 4109967185984466425, guid: ad56293b4b8c90840b7566610be7b035, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 179.431
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109967185984466426, guid: ad56293b4b8c90840b7566610be7b035, type: 3}
+      propertyPath: range
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4109967185984466426, guid: ad56293b4b8c90840b7566610be7b035, type: 3}
       propertyPath: player
