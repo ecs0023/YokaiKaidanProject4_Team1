@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
 
     //This gets all needed game parts
     #region
+    public int health=2;
     public float adjust;
     public float moveSpeed =2f;
     public Transform player;
@@ -44,19 +45,19 @@ public class EnemyController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.R))
         {
-            DealDamage();
+            DealDamageToPlayer();
         }
+
+        
     }
     private void FixedUpdate()
     {
         if (distance < range)
         {
             moveCharacter(movement);
-            anim.SetBool("isChasing", true);
         }
         else
         {
-            anim.SetBool("isChasing", false);
         }
         
     }
@@ -64,7 +65,7 @@ public class EnemyController : MonoBehaviour
 
     void moveCharacter(Vector2 direction)
     {
-            rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
 
     #endregion
@@ -73,16 +74,16 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.tag == "player")
         {
-            enemysound.Play();
-            DealDamage();
-            anim.SetBool("isAttacking",true);
+            Debug.Log("In range");
+            DealDamageToPlayer();
+            anim.SetBool("isAttacking", true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         anim.SetBool("isAttacking", false);
     }
-    private void DealDamage()
+    private void DealDamageToPlayer()
     {
         playerscript.health--;
     }
