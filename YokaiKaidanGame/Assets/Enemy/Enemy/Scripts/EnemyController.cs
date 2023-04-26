@@ -45,9 +45,16 @@ public class EnemyController : MonoBehaviour
         direction.Normalize();
         movement = direction;
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (health<=0)
         {
-            DealDamageToPlayer();
+            
+            anim.SetTrigger("death");
+            Destroy(gameObject);
+
+        }
+        else
+        {
+            anim.ResetTrigger("death");
         }
     }
     private void FixedUpdate()

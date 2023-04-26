@@ -282,13 +282,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e1a0417babdbe4d9057a03cbf571e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 16
   adjust: 90
   moveSpeed: 3
   player: {fileID: 0}
   rb: {fileID: 3857356305912826074}
   enemysound: {fileID: 3857356305912826079}
-  range: 10
+  range: 8
   anim: {fileID: 3857356305912826067}
   playerscript: {fileID: 0}
   damage: 3
