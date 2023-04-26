@@ -17,6 +17,7 @@ public class PlayerTestController : MonoBehaviour
     public Animator anim;
     private float timer;
     public float cooldown = 1.5f;
+    public SpriteRenderer spriteRend;
 
     public void Start()
     {
@@ -25,6 +26,8 @@ public class PlayerTestController : MonoBehaviour
         hasStagKey = false;
         anim = this.GetComponent<Animator>();
         flashlighton = false;
+        spriteRend = GetComponent<SpriteRenderer>();
+        spriteRend.color = Color.white;
     }
     public void Update()
     {
@@ -52,9 +55,16 @@ public class PlayerTestController : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
         moveDirection = new Vector2(moveX, moveY);
     }
+
     public void Move()
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        
+        anim.SetBool("IsWalking", true);
+        if(moveDirection!=null)
+        {
+            anim.SetBool("IsWalking", false);
+        }
     }
 
     void OnTriggerStay2D(Collider2D other)
