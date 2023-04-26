@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Intro1.unity
     guid: 9428b8ab8eb522144974a8edef2c9690
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EnemyTesting.unity
     guid: 241a26dd5725d00419ba82d0f4faa17f
   - enabled: 0
