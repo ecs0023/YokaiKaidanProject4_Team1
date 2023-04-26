@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour
     public float range;
     public Animator anim;
     public PlayerHealth playerscript;
+    public int damage;
     #endregion
     void Start()
     {
@@ -43,12 +44,10 @@ public class EnemyController : MonoBehaviour
         direction.Normalize();
         movement = direction;
 
-        if(Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             DealDamageToPlayer();
         }
-
-        
     }
     private void FixedUpdate()
     {
@@ -70,7 +69,7 @@ public class EnemyController : MonoBehaviour
 
     #endregion
     //EndMovement
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
@@ -85,7 +84,7 @@ public class EnemyController : MonoBehaviour
     }
     private void DealDamageToPlayer()
     {
-        playerscript.health--;
+        playerscript.health -= 2;
     }
 
 }
