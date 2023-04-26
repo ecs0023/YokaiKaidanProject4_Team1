@@ -15,6 +15,8 @@ public class PlayerTestController : MonoBehaviour
     private Vector2 moveDirection;
     public int health;
     public Animator anim;
+    private float timer;
+    public float cooldown = 1.5f;
 
     public void Start()
     {
@@ -27,6 +29,16 @@ public class PlayerTestController : MonoBehaviour
     public void Update()
     {
         ProcessInputs();
+        if (health <= 0)
+        {
+            anim.SetTrigger("death");
+            if(Time.time > timer)
+            {
+                timer = Time.time + cooldown;
+                Destroy(gameObject);
+            }
+
+        }
     }
 
     public void FixedUpdate()
