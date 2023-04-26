@@ -291,4 +291,4 @@ MonoBehaviour:
   range: 8
   anim: {fileID: 8510619470797204420}
   playerscript: {fileID: 0}
-  damage: 5
+  damage: 2
