@@ -42,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: blood
+    uniqueID: 339323291
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
