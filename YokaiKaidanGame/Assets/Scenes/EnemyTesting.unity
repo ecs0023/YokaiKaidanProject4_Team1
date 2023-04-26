@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 1352209388}
   - component: {fileID: 1352209390}
   - component: {fileID: 1352209389}
+  - component: {fileID: 1352209391}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -405,6 +406,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1352209391
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352209387}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 100
+  m_ExtrusionFactor: 0
 --- !u!1 &1513640571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,10 +1396,6 @@ PrefabInstance:
       value: 179.431
       objectReference: {fileID: 0}
     - target: {fileID: 4109967185984466426, guid: ad56293b4b8c90840b7566610be7b035, type: 3}
-      propertyPath: range
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4109967185984466426, guid: ad56293b4b8c90840b7566610be7b035, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 981101854}
@@ -1421,7 +1434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8510619470797204426, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.41
+      value: 6.43
       objectReference: {fileID: 0}
     - target: {fileID: 8510619470797204426, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1463,5 +1476,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Otsuya
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8153338751585987547, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
