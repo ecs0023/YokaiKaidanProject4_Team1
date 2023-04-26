@@ -26,6 +26,7 @@ public class EnemyController : MonoBehaviour
     public int damage;
     private float timer;
     private float cooldown = 0.5f;
+    private float deathcooldown = 1.5f;
     #endregion
     void Start()
     {
@@ -49,12 +50,13 @@ public class EnemyController : MonoBehaviour
         {
             
             anim.SetTrigger("death");
-            Destroy(gameObject);
+            if (Time.time > timer)
+            {
+                timer = Time.time + deathcooldown;
+                Destroy(gameObject);
+            }
+            
 
-        }
-        else
-        {
-            anim.ResetTrigger("death");
         }
     }
     private void FixedUpdate()
@@ -83,7 +85,6 @@ public class EnemyController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-                    timer = Time.time + cooldown;
                     DealDamageToPlayer();
                     anim.SetTrigger("isAttacking");
 
