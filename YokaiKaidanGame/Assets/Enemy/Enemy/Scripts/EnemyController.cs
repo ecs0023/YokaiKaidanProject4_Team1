@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
 
     //This gets all needed game parts
     #region
+    public int health=2;
     public float adjust;
     public float moveSpeed =2f;
     public Transform player;
@@ -23,6 +24,9 @@ public class EnemyController : MonoBehaviour
     public float range;
     public Animator anim;
     public PlayerHealth playerscript;
+    public int damage;
+    private float timer;
+    private float cooldown = 0.5f;
     #endregion
     void Start()
     {
@@ -42,9 +46,9 @@ public class EnemyController : MonoBehaviour
         direction.Normalize();
         movement = direction;
 
-        if(Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            DealDamage();
+            DealDamageToPlayer();
         }
     }
     private void FixedUpdate()
@@ -64,27 +68,30 @@ public class EnemyController : MonoBehaviour
 
     void moveCharacter(Vector2 direction)
     {
-            rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
 
     #endregion
     //EndMovement
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D other)
     {
-        if (collision.tag == "player")
+        if (other.tag == "Player")
         {
-            enemysound.Play();
-            DealDamage();
-            anim.SetBool("isAttacking",true);
+            if (Time.time > timer)
+            {
+
+                timer = Time.time + cooldown;
+                // Damage the enemy
+                DealDamageToPlayer();
+
+            }
+            
+            
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private void DealDamageToPlayer()
     {
-        anim.SetBool("isAttacking", false);
-    }
-    private void DealDamage()
-    {
-        playerscript.health--;
+        playerscript.health -= 1;
     }
 
 }
