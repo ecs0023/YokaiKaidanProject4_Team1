@@ -87,7 +87,7 @@ public class EnemyController : MonoBehaviour
         {
                     DealDamageToPlayer();
                     anim.SetTrigger("isAttacking");
-
+                
         }
 
         
