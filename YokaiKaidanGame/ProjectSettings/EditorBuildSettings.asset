@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/upstairs.unity
     guid: 5f0bacd73bebf4ad28e1764374268a10
+  - enabled: 0
+    path: Assets/Scenes/EnemyTesting.unity
+    guid: 241a26dd5725d00419ba82d0f4faa17f
   m_configObjects: {}
