@@ -72,7 +72,7 @@ public class EnemyController : MonoBehaviour
     //EndMovement
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "player")
+        if (collision.tag == "Player")
         {
             Debug.Log("In range");
             DealDamageToPlayer();
