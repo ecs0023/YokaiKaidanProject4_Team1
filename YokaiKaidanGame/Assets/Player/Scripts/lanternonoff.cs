@@ -8,6 +8,13 @@ public class lanternonoff : MonoBehaviour
 
     public GameObject lantern;
 
+    public EnemyController enemyscript;
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        DealDamageToEnemy();
+    }
+
     void Start()
     {
         lantern.SetActive(true);
@@ -33,11 +40,17 @@ public class lanternonoff : MonoBehaviour
     {
         lantern.SetActive(true);
         lanternisoff = false;
+
     }
 
     void OFF()
     {
         lantern.SetActive(false);
         lanternisoff = true;
+    }
+
+    private void DealDamageToEnemy()
+    {
+        enemyscript.health--;
     }
 }
