@@ -27,6 +27,7 @@ public class EnemyController : MonoBehaviour
     private float timer;
     private float cooldown = 0.5f;
     private float deathcooldown = 1.5f;
+    public SpriteRenderer sr;
     #endregion
     void Start()
     {
@@ -34,6 +35,8 @@ public class EnemyController : MonoBehaviour
         enemysound = this.GetComponent<AudioSource>();
         anim = this.GetComponent<Animator>();
         playerscript.GetComponent<PlayerHealth>();
+        sr = GetComponent<SpriteRenderer>();
+        sr.color = Color.white;
     }
     //EnemyMovement
     #region
@@ -56,6 +59,10 @@ public class EnemyController : MonoBehaviour
                 Destroy(gameObject);
             }
             
+
+        }
+        if(Input.GetKeyDown(KeyCode.W))
+        {
 
         }
     }
@@ -85,9 +92,9 @@ public class EnemyController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-                    DealDamageToPlayer();
-                    anim.SetTrigger("isAttacking");
-                
+            DealDamageToPlayer();
+            anim.SetTrigger("isAttacking");
+            sr.color = Color.red;
         }
 
         
@@ -96,6 +103,7 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         anim.ResetTrigger("isAttacking");
+        sr.color = Color.white;
     }
 
     private void DealDamageToPlayer()
