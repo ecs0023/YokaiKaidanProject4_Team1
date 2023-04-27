@@ -74,7 +74,7 @@ public class lanternonoff : MonoBehaviour
 
     private void DealDamageToEnemy()
     {
-        enemyscript.health -= damage;
+        enemyscript.enemyhealth -= damage;
 
     }
 }
