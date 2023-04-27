@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e1a0417babdbe4d9057a03cbf571e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 8
+  enemyhealth: 8
   adjust: 90
   moveSpeed: 3
   player: {fileID: 0}
@@ -293,6 +293,7 @@ MonoBehaviour:
   anim: {fileID: 4109967185984466423}
   playerscript: {fileID: 0}
   damage: 1
+  sr: {fileID: 4109967185984466422}
 --- !u!1 &8471564622608441576
 GameObject:
   m_ObjectHideFlags: 0

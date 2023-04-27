@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
 
     //This gets all needed game parts
     #region
-    public int enemyhealth = 2;
+    public int enemyhealth;
     public float adjust;
     public float moveSpeed = 2f;
     public Transform player;
@@ -37,6 +37,8 @@ public class EnemyController : MonoBehaviour
         playerscript.GetComponent<PlayerTestController>();
         sr = GetComponent<SpriteRenderer>();
         sr.color = Color.white;
+        
+
     }
     //EnemyMovement
     #region
@@ -59,8 +61,6 @@ public class EnemyController : MonoBehaviour
                 
                 Destroy(gameObject);
             }
-            
-
         }
     }
     private void FixedUpdate()
@@ -92,10 +92,27 @@ public class EnemyController : MonoBehaviour
             DealDamageToPlayer();
             anim.SetTrigger("isAttacking");
             sr.color = Color.red;
+            if (playerscript.health <= 0)
+            {
+                Destroy(other.gameObject);
+            }
         }
+
 
         
 
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "hitbox")
+        {
+            if (Time.time > timer)
+            {
+                timer = Time.time + cooldown;
+                enemyhealth--;
+
+            }
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -105,7 +122,10 @@ public class EnemyController : MonoBehaviour
 
     private void DealDamageToPlayer()
     {
+        
         playerscript.health -= damage;
+        
+
     }
 }
 
