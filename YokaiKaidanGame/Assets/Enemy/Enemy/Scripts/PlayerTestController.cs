@@ -35,12 +35,48 @@ public class PlayerTestController : MonoBehaviour
         if (health <= 0)
         {
             anim.SetTrigger("death");
-            if(Time.time > timer)
+            if (Time.time > timer)
             {
                 timer = Time.time + cooldown;
                 Destroy(gameObject);
             }
 
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            anim.SetBool("IsWalking", true);
+        }
+        else
+        {
+            anim.SetBool("IsWalking", false);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            anim.SetBool("IsWalking", true);
+        }
+        else
+        {
+            anim.SetBool("IsWalking", false);
+        }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            anim.SetBool("IsWalking", true);
+        }
+        else
+        {
+            anim.SetBool("IsWalking", false);
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            anim.SetBool("IsWalking", true);
+        }
+        else
+        {
+            anim.SetBool("IsWalking", false);
         }
     }
 
@@ -59,12 +95,6 @@ public class PlayerTestController : MonoBehaviour
     public void Move()
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
-        
-        anim.SetBool("IsWalking", true);
-        if(moveDirection!=null)
-        {
-            anim.SetBool("IsWalking", false);
-        }
     }
 
     void OnTriggerStay2D(Collider2D other)
