@@ -54,13 +54,8 @@ public class EnemyController : MonoBehaviour
         if (enemyhealth<=0)
         {
             anim.SetTrigger("death");
-
-            if (Time.time > timer)
-            {
-                timer = Time.time + deathcooldown;
-                
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
+            
         }
     }
     private void FixedUpdate()
@@ -92,10 +87,6 @@ public class EnemyController : MonoBehaviour
             DealDamageToPlayer();
             anim.SetTrigger("isAttacking");
             sr.color = Color.red;
-            if (playerscript.health <= 0)
-            {
-                Destroy(other.gameObject);
-            }
         }
 
 
