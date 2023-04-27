@@ -25,16 +25,5 @@ public class PlayContr : MonoBehaviour
 
     }
     #endregion
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "player")
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                
-            }
-        }
-       
-    }
 
 }

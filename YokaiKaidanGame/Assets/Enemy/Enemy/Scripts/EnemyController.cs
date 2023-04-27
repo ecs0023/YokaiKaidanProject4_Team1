@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
 
     //This gets all needed game parts
     #region
-    public int health = 2;
+    public int enemyhealth = 2;
     public float adjust;
     public float moveSpeed = 2f;
     public Transform player;
@@ -27,13 +27,16 @@ public class EnemyController : MonoBehaviour
     private float timer;
     private float cooldown = 0.5f;
     private float deathcooldown = 1.5f;
+    public SpriteRenderer sr;
     #endregion
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         enemysound = this.GetComponent<AudioSource>();
         anim = this.GetComponent<Animator>();
-        playerscript.GetComponent<PlayerHealth>();
+        playerscript.GetComponent<PlayerTestController>();
+        sr = GetComponent<SpriteRenderer>();
+        sr.color = Color.white;
     }
     //EnemyMovement
     #region
@@ -46,13 +49,14 @@ public class EnemyController : MonoBehaviour
         direction.Normalize();
         movement = direction;
 
-        if (health<=0)
+        if (enemyhealth<=0)
         {
-            
             anim.SetTrigger("death");
+
             if (Time.time > timer)
             {
                 timer = Time.time + deathcooldown;
+                
                 Destroy(gameObject);
             }
             
@@ -85,9 +89,9 @@ public class EnemyController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-                    DealDamageToPlayer();
-                    anim.SetTrigger("isAttacking");
-                
+            DealDamageToPlayer();
+            anim.SetTrigger("isAttacking");
+            sr.color = Color.red;
         }
 
         
@@ -96,6 +100,7 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         anim.ResetTrigger("isAttacking");
+        sr.color = Color.white;
     }
 
     private void DealDamageToPlayer()

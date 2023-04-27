@@ -13,7 +13,7 @@ public class PlayerTestController : MonoBehaviour
     public bool hasBearKey;
     public bool flashlighton;
     private Vector2 moveDirection;
-    public int health;
+    public int playerhealth;
     public Animator anim;
     private float timer;
     public float cooldown = 1.5f;
@@ -21,6 +21,7 @@ public class PlayerTestController : MonoBehaviour
 
     public void Start()
     {
+
         hasHoundKey = false;
         hasBearKey = false;
         hasStagKey = false;
@@ -32,7 +33,7 @@ public class PlayerTestController : MonoBehaviour
     public void Update()
     {
         ProcessInputs();
-        if (health <= 0)
+        if (playerhealth <= 0)
         {
             anim.SetTrigger("death");
             if (Time.time > timer)
