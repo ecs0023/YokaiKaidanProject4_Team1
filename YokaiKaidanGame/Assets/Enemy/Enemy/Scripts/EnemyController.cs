@@ -37,8 +37,6 @@ public class EnemyController : MonoBehaviour
         playerscript.GetComponent<PlayerTestController>();
         sr = GetComponent<SpriteRenderer>();
         sr.color = Color.white;
-        
-
     }
 
 
@@ -97,12 +95,8 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.tag == "hitbox")
         {
-            if (Time.time > timer)
-            {
-                timer = Time.time + cooldown;
-                enemyhealth--;
 
-            }
+            DealDamage();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -124,6 +118,12 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(1/2);
         Destroy(gameObject);
 
+    }
+    IEnumerator DealDamage()
+    {
+        yield return new WaitForSeconds(1/2);
+        enemyhealth--;
+        Debug.Log("Hit Player");
     }
 }
 
