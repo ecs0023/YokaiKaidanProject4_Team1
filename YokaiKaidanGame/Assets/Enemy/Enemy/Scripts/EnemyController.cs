@@ -40,7 +40,10 @@ public class EnemyController : MonoBehaviour
         
 
     }
-    //EnemyMovement
+
+
+
+
     #region
     void Update()
     {
@@ -54,8 +57,9 @@ public class EnemyController : MonoBehaviour
         if (enemyhealth<=0)
         {
             anim.SetTrigger("death");
-            Destroy(gameObject);
-            
+            EnemyDestruction();
+
+
         }
     }
     private void FixedUpdate()
@@ -88,10 +92,6 @@ public class EnemyController : MonoBehaviour
             anim.SetTrigger("isAttacking");
             sr.color = Color.red;
         }
-
-
-        
-
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -116,6 +116,13 @@ public class EnemyController : MonoBehaviour
         
         playerscript.health -= damage;
         
+
+    }
+    IEnumerator EnemyDestruction()
+    {
+
+        yield return new WaitForSeconds(1/2);
+        Destroy(gameObject);
 
     }
 }
