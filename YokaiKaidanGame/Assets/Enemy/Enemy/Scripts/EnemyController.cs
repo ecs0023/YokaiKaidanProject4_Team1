@@ -123,7 +123,7 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(1/2);
         enemyhealth--;
-        Debug.Log("Hit Player");
+        
     }
 }
 

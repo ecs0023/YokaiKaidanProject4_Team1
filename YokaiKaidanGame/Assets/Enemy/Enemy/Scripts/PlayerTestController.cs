@@ -36,31 +36,13 @@ public class PlayerTestController : MonoBehaviour
         if (playerhealth <= 0)
         {
             anim.SetTrigger("death");
-            if (Time.time > timer)
-            {
-                timer = Time.time + cooldown;
-                Destroy(gameObject);
-            }
+            PlayerDestruction();
+                
+       
 
         }
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            anim.SetBool("IsWalking", true);
-        }
-        else
-        {
-            anim.SetBool("IsWalking", false);
-        }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            anim.SetBool("IsWalking", true);
-        }
-        else
-        {
-            anim.SetBool("IsWalking", false);
-        }
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -68,17 +50,9 @@ public class PlayerTestController : MonoBehaviour
         }
         else
         {
-            anim.SetBool("IsWalking", false);
+            anim.SetBool("isWalking", false);
         }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            anim.SetBool("IsWalking", true);
-        }
-        else
-        {
-            anim.SetBool("IsWalking", false);
-        }
     }
 
     public void FixedUpdate()
@@ -177,5 +151,10 @@ public class PlayerTestController : MonoBehaviour
                 }
             }
         }
+    }
+    IEnumerator PlayerDestruction()
+    {
+        yield return new WaitForSeconds(1 / 2);
+        Destroy(gameObject);
     }
 }
