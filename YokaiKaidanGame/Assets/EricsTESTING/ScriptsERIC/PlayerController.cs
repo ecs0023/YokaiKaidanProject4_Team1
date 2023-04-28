@@ -10,19 +10,19 @@ public class PlayerController : MonoBehaviour
     public bool hasStagKey;
     public bool hasBearKey;
     public bool flashlighton;
-    public int health = 6;
-    public Vector2 mouse;
-    public int speed = 4;
+    public int health=6;
 
 
     private void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
+    {     
+           
     }
-    void Update()
+
+
+    
+
+    private void Update()
     {
-        mouse.x = Input.GetAxis("Mouse X");
-        mouse.y = Input.GetAxis("Mouse Y");
     }
 
 

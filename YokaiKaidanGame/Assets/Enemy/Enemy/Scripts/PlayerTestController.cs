@@ -50,15 +50,6 @@ public class PlayerTestController : MonoBehaviour
             
 
         }
-
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
-        {
-            anim.SetBool("IsWalking", true);
-        }
-        else
-        {
-            anim.SetBool("IsWalking", false);
-        }
     }
 
     public void FixedUpdate()
@@ -71,6 +62,7 @@ public class PlayerTestController : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
         moveDirection = new Vector2(moveX, moveY);
+        
     }
 
     public void Move()
