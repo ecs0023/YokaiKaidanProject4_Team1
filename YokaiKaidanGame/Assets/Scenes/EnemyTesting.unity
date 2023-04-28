@@ -1266,7 +1266,8 @@ MonoBehaviour:
   hasBearKey: 0
   flashlighton: 0
   health: 6
-  objectToMove: {fileID: 0}
+  mouse: {x: 0, y: 0}
+  speed: 4
 --- !u!50 &2111619661
 Rigidbody2D:
   serializedVersion: 4
