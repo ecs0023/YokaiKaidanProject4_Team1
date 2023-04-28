@@ -1,82 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
+using System.Runtime.CompilerServices;
+using UnityEditor.Rendering;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class PlayerTestController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed;
-    public Rigidbody2D rb;
     public bool hasHoundKey;
     public bool hasStagKey;
     public bool hasBearKey;
     public bool flashlighton;
-    private Vector2 moveDirection;
-    public int playerhealth;
-    public Animator anim;
-    private float timer;
-    public SpriteRenderer spriteRend;
-    public int health=6;
+    public int health = 6;
+    public Vector2 mouse;
+    public int speed = 4;
 
 
-    public void Start()
+    private void Start()
     {
-
-        hasHoundKey = false;
-        hasBearKey = false;
-        hasStagKey = false;
-        anim = this.GetComponent<Animator>();
-        flashlighton = false;
-        spriteRend = GetComponent<SpriteRenderer>();
-        spriteRend.color = Color.white;
+        Cursor.lockState = CursorLockMode.Locked;
     }
-    public void Update()
+    void Update()
     {
-        ProcessInputs();
-
-        IEnumerator PlayerDestruction()
-        {
-
-            yield return new WaitForSeconds(1 / 2);
-            Destroy(gameObject);
-
-        }
-
-        if (playerhealth <= 0)
-        {
-            anim.SetTrigger("death");
-            PlayerDestruction();
-            
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
-        {
-            anim.SetBool("IsWalking", true);
-        }
-        else
-        {
-            anim.SetBool("IsWalking", false);
-        }
+        mouse.x = Input.GetAxis("Mouse X");
+        mouse.y = Input.GetAxis("Mouse Y");
     }
 
-    public void FixedUpdate()
-    {
-        Move();
-    }
-
-    public void ProcessInputs()
-    {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-        moveDirection = new Vector2(moveX, moveY);
-    }
-
-    public void Move()
-    {
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
-    }
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -157,10 +105,5 @@ public class PlayerTestController : MonoBehaviour
                 }
             }
         }
-    }
-    IEnumerator PlayerDestruction()
-    {
-        yield return new WaitForSeconds(1 / 2);
-        Destroy(gameObject);
     }
 }

@@ -10,7 +10,6 @@ using UnityEngine.UIElements;
 public class EnemyController : MonoBehaviour
 {
 
-    //This gets all needed game parts
     #region
     public int enemyhealth;
     public float adjust;
@@ -22,11 +21,9 @@ public class EnemyController : MonoBehaviour
     private float distance;
     public float range;
     public Animator anim;
-    public PlayerHealth playerscript;
+    public PlayerController playerscript;
     public int damage;
     private float timer;
-    private float cooldown = 0.5f;
-    private float deathcooldown = 1.5f;
     public SpriteRenderer sr;
     #endregion
     void Start()
@@ -55,7 +52,7 @@ public class EnemyController : MonoBehaviour
         if (enemyhealth<=0)
         {
             anim.SetTrigger("death");
-            EnemyDestruction();
+            Destroy(gameObject);
 
 
         }
@@ -112,16 +109,9 @@ public class EnemyController : MonoBehaviour
         
 
     }
-    IEnumerator EnemyDestruction()
-    {
-
-        yield return new WaitForSeconds(1/2);
-        Destroy(gameObject);
-
-    }
     IEnumerator DealDamage()
     {
-        yield return new WaitForSeconds(1/2);
+        yield return new WaitForSeconds(0.5f);
         enemyhealth--;
         
     }
