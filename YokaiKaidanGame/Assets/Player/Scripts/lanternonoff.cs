@@ -7,8 +7,6 @@ public class lanternonoff : MonoBehaviour
 {
     public static bool lanternisoff = false;
     public static bool lanternCollider = true;
-    //private float timer;
-    //private float cooldown = 0.5f;
     public int damage;
     public Animator anim;
 
@@ -23,14 +21,6 @@ public class lanternonoff : MonoBehaviour
             if (lanternisoff == false)
             {
                 lanternCollider = true;
-
-                if (Time.time > timer)
-                {
-
-                    timer = Time.time + cooldown;
-                    
-
-                }
                
             }
         }

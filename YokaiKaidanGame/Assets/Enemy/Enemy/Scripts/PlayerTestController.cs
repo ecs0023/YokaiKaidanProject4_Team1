@@ -18,13 +18,6 @@ public class PlayerTestController : MonoBehaviour
     private float timer;
     public SpriteRenderer spriteRend;
 
-    IEnumerator EnemyDestruction()
-    {
-
-        yield return new WaitForSeconds(1 / 2);
-        Destroy(gameObject);
-
-    }
 
     public void Start()
     {
