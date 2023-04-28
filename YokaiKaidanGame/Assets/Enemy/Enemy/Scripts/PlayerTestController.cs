@@ -16,8 +16,15 @@ public class PlayerTestController : MonoBehaviour
     public int playerhealth;
     public Animator anim;
     private float timer;
-    public float cooldown = 1.5f;
     public SpriteRenderer spriteRend;
+
+    IEnumerator EnemyDestruction()
+    {
+
+        yield return new WaitForSeconds(1 / 2);
+        Destroy(gameObject);
+
+    }
 
     public void Start()
     {
@@ -33,26 +40,31 @@ public class PlayerTestController : MonoBehaviour
     public void Update()
     {
         ProcessInputs();
+
+        IEnumerator PlayerDestruction()
+        {
+
+            yield return new WaitForSeconds(1 / 2);
+            Destroy(gameObject);
+
+        }
+
         if (playerhealth <= 0)
         {
             anim.SetTrigger("death");
             PlayerDestruction();
-                
-       
+            
 
         }
 
-
-
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
         {
             anim.SetBool("IsWalking", true);
         }
         else
         {
-            anim.SetBool("isWalking", false);
+            anim.SetBool("IsWalking", false);
         }
-
     }
 
     public void FixedUpdate()
