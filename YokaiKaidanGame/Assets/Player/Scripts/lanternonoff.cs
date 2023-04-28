@@ -10,6 +10,7 @@ public class lanternonoff : MonoBehaviour
     private float timer;
     private float cooldown = 0.5f;
     public int damage;
+    public Animator anim;
 
     public GameObject lantern;
 
@@ -27,7 +28,7 @@ public class lanternonoff : MonoBehaviour
                 {
 
                     timer = Time.time + cooldown;
-                    DealDamageToEnemy();
+                    
 
                 }
                
@@ -38,6 +39,7 @@ public class lanternonoff : MonoBehaviour
     void Start()
     {
         lantern.SetActive(true);
+        anim = this.GetComponent<Animator>();
     }
 
     void Update()
@@ -58,6 +60,7 @@ public class lanternonoff : MonoBehaviour
 
     void ON()
     {
+        anim.SetTrigger("Equip");
         lantern.SetActive(true);
         lanternisoff = false;
         lanternCollider = true;
@@ -67,14 +70,9 @@ public class lanternonoff : MonoBehaviour
 
     void OFF()
     {
+        anim.SetTrigger("Unequip");
         lantern.SetActive(false);
         lanternisoff = true;
         lanternCollider = false;
-    }
-
-    private void DealDamageToEnemy()
-    {
-        enemyscript.enemyhealth -= damage;
-
     }
 }
