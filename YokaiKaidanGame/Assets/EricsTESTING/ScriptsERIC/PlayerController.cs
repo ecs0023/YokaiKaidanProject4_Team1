@@ -6,25 +6,61 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float moveSpeed;
+    public Rigidbody2D rb;
     public bool hasHoundKey;
     public bool hasStagKey;
     public bool hasBearKey;
     public bool flashlighton;
-    public int health=6;
+    private Vector2 moveDirection;
+    public int playerhealth;
+    public Animator anim;
+    public SpriteRenderer spriteRend;
+    public int health = 6;
+
 
 
     private void Start()
-    {     
-           
+    {
+        hasHoundKey = false;
+        hasBearKey = false;
+        hasStagKey = false;
+        anim = this.GetComponent<Animator>();
+        flashlighton = false;
+        spriteRend = GetComponent<SpriteRenderer>();
+        spriteRend.color = Color.white;
     }
-
-
-    
-
     private void Update()
     {
+        ProcessInputs();
+
     }
 
+    public void FixedUpdate()
+    {
+        Move();
+    }
+
+    public void ProcessInputs()
+    {
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+        moveDirection = new Vector2(moveX, moveY);
+        if (moveY>0)
+        {
+            anim.SetBool("isWalking", true);
+        }
+        else
+        {
+            anim.SetBool("isWalking", false);
+        }
+
+    }
+
+    public void Move()
+    {
+        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+    }
 
     void OnTriggerStay2D(Collider2D other)
     {

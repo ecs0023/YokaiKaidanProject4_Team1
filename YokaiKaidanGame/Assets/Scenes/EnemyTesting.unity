@@ -399,138 +399,6 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 2146031676}
---- !u!90 &1591360376
-Avatar:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Automatic Avatar
-  m_AvatarSize: 600
-  m_Avatar:
-    serializedVersion: 3
-    m_AvatarSkeleton:
-      data:
-        m_Node:
-        - m_ParentId: -1
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        m_ID: 00000000f373dbaa
-        m_AxesArray: []
-    m_AvatarSkeletonPose:
-      data:
-        m_X:
-        - t: {x: -2.44, y: -1.45, z: 0}
-          q: {x: -0, y: -0, z: 0.9999877, w: 0.0049649957}
-          s: {x: 2, y: 2, z: 1}
-        - t: {x: -0.042, y: -0.156, z: 0}
-          q: {x: -0, y: -0, z: 0.0071271956, w: 0.99997467}
-          s: {x: 1, y: 1, z: 1}
-    m_DefaultPose:
-      data:
-        m_X:
-        - t: {x: -2.44, y: -1.45, z: 0}
-          q: {x: -0, y: -0, z: 0.9999877, w: 0.0049649957}
-          s: {x: 2, y: 2, z: 1}
-        - t: {x: -0.042, y: -0.156, z: 0}
-          q: {x: -0, y: -0, z: 0.0071271956, w: 0.99997467}
-          s: {x: 1, y: 1, z: 1}
-    m_SkeletonNameIDArray: 00000000f373dbaa
-    m_Human:
-      data:
-        serializedVersion: 2
-        m_RootX:
-          t: {x: 0, y: 0, z: 0}
-          q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1}
-        m_Skeleton:
-          data:
-            m_Node: []
-            m_ID: 
-            m_AxesArray: []
-        m_SkeletonPose:
-          data:
-            m_X: []
-        m_LeftHand:
-          data:
-            m_HandBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        m_RightHand:
-          data:
-            m_HandBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        m_HumanBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        m_HumanBoneMass:
-        - 0.14545456
-        - 0.12121213
-        - 0.12121213
-        - 0.048484854
-        - 0.048484854
-        - 0.009696971
-        - 0.009696971
-        - 0.030303033
-        - 0.14545456
-        - 0.14545456
-        - 0.012121214
-        - 0.048484854
-        - 0.006060607
-        - 0.006060607
-        - 0.024242427
-        - 0.024242427
-        - 0.01818182
-        - 0.01818182
-        - 0.006060607
-        - 0.006060607
-        - 0.0024242427
-        - 0.0024242427
-        - 0
-        - 0
-        - 0
-        m_Scale: 1
-        m_ArmTwist: 0.5
-        m_ForeArmTwist: 0.5
-        m_UpperLegTwist: 0.5
-        m_LegTwist: 0.5
-        m_ArmStretch: 0.05
-        m_LegStretch: 0.05
-        m_FeetSpacing: 0
-        m_HasLeftHand: 0
-        m_HasRightHand: 0
-        m_HasTDoF: 0
-    m_HumanSkeletonIndexArray: 
-    m_HumanSkeletonReverseIndexArray: 
-    m_RootMotionBoneIndex: -1
-    m_RootMotionBoneX:
-      t: {x: 0, y: 0, z: 0}
-      q: {x: 0, y: 0, z: 0, w: 1}
-      s: {x: 1, y: 1, z: 1}
-    m_RootMotionSkeleton:
-      data:
-        m_Node: []
-        m_ID: 
-        m_AxesArray: []
-    m_RootMotionSkeletonPose:
-      data:
-        m_X: []
-    m_RootMotionSkeletonIndexArray: 
-  m_TOS:
-    0: 
-    2866508787: Light
-  m_HumanDescription:
-    serializedVersion: 3
-    m_Human: []
-    m_Skeleton: []
-    m_ArmTwist: 0.5
-    m_ForeArmTwist: 0.5
-    m_UpperLegTwist: 0.5
-    m_LegTwist: 0.5
-    m_ArmStretch: 0.05
-    m_LegStretch: 0.05
-    m_FeetSpacing: 0
-    m_GlobalScale: 1
-    m_RootMotionBoneName: 
-    m_HasTranslationDoF: 0
-    m_HasExtraRoot: 0
-    m_SkeletonHasParents: 1
 --- !u!1 &1638561522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,33 +1107,17 @@ GameObject:
   m_Component:
   - component: {fileID: 2111619664}
   - component: {fileID: 2111619663}
-  - component: {fileID: 2111619659}
   - component: {fileID: 2111619666}
   - component: {fileID: 2111619665}
+  - component: {fileID: 2111619668}
+  - component: {fileID: 2111619667}
   m_Layer: 0
-  m_Name: PlayerNew
+  m_Name: Player(Erics)
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2111619659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2111619658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5160f2bc7e0ac6e4d8920e5159d0f8dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasHoundKey: 0
-  hasStagKey: 0
-  hasBearKey: 0
-  flashlighton: 0
-  health: 6
 --- !u!212 &2111619663
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1380,6 +1232,49 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6879368, y: 1.0712402}
   m_EdgeRadius: 0
+--- !u!114 &2111619667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111619658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5160f2bc7e0ac6e4d8920e5159d0f8dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 4
+  rb: {fileID: 2111619665}
+  hasHoundKey: 0
+  hasStagKey: 0
+  hasBearKey: 0
+  flashlighton: 0
+  playerhealth: 100
+  anim: {fileID: 2111619668}
+  spriteRend: {fileID: 2111619663}
+  health: 6
+--- !u!95 &2111619668
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111619658}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: da10ea387acc7d546b0c05374f11acc4, type: 2}
+  m_CullingMode: 2
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2146031675
 GameObject:
   m_ObjectHideFlags: 3
@@ -1475,10 +1370,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3857356305912826067, guid: a11c113ce59d7d74ca969d2ddc5eee4b, type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 1591360376}
     - target: {fileID: 3857356305912826072, guid: a11c113ce59d7d74ca969d2ddc5eee4b, type: 3}
       propertyPath: m_Name
       value: Sato
@@ -1538,7 +1429,7 @@ PrefabInstance:
     - target: {fileID: 3857356305912826078, guid: a11c113ce59d7d74ca969d2ddc5eee4b, type: 3}
       propertyPath: playerscript
       value: 
-      objectReference: {fileID: 2111619659}
+      objectReference: {fileID: 2111619667}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a11c113ce59d7d74ca969d2ddc5eee4b, type: 3}
 --- !u!1001 &5697689253717256875
@@ -1603,7 +1494,7 @@ PrefabInstance:
     - target: {fileID: 4109967185984466426, guid: ad56293b4b8c90840b7566610be7b035, type: 3}
       propertyPath: playerscript
       value: 
-      objectReference: {fileID: 2111619659}
+      objectReference: {fileID: 2111619667}
     - target: {fileID: 4109967185984466428, guid: ad56293b4b8c90840b7566610be7b035, type: 3}
       propertyPath: m_Name
       value: Oiwa
@@ -1632,7 +1523,7 @@ PrefabInstance:
     - target: {fileID: 8510619470797204425, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
       propertyPath: playerscript
       value: 
-      objectReference: {fileID: 2111619659}
+      objectReference: {fileID: 2111619667}
     - target: {fileID: 8510619470797204426, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
       propertyPath: m_RootOrder
       value: 1
