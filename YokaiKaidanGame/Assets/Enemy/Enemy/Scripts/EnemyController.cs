@@ -21,9 +21,8 @@ public class EnemyController : MonoBehaviour
     private float distance;
     public float range;
     public Animator anim;
-    public PlayerController playerscript;
+    public PlayerTestController playerscript;
     public int damage;
-    private float timer;
     public SpriteRenderer sr;
     #endregion
     void Start()
