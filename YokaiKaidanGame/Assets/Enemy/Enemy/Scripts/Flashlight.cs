@@ -1,16 +1,26 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 
 public class Flashlight : MonoBehaviour
 {
+
+    private void Start()
+    {
+        
+    }
     void Update()
     {
-        faceMouse();
+        FaceMouse();
     }
 
-    void faceMouse()
+    void FaceMouse()
     {
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -21,4 +31,5 @@ public class Flashlight : MonoBehaviour
 
         transform.up = direction;
     }
+    
 }

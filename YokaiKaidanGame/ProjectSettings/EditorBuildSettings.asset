@@ -18,12 +18,9 @@ EditorBuildSettings:
     path: Assets/downstairsAndOutside.unity
     guid: f0caec83e0a8f4a9ab305cbb31fadaa8
   - enabled: 1
-    path: Assets/Dojo.unity
-    guid: c62c8f3d22b084a6783739cc9c9e2fa3
+    path: Assets/Scenes/YouLose.unity
+    guid: da487596ddbc96b41befd866348d4065
   - enabled: 1
-    path: Assets/servantsArea.unity
-    guid: 21b4f8a86ebfe4c94ae129d48fb82a61
-  - enabled: 1
-    path: Assets/upstairs.unity
-    guid: 5f0bacd73bebf4ad28e1764374268a10
+    path: Assets/Scenes/youWin.unity
+    guid: d57bfd1d8c61aae449ea1d9a93205e29
   m_configObjects: {}

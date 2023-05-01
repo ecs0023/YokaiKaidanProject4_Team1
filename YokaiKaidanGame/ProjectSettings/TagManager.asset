@@ -8,6 +8,11 @@ TagManager:
   - Enemy
   - Key
   - hitbox
+  - YouWin
+  - YouLose
+  - Sato
+  - Otsuya
+  - Oiwa
   layers:
   - Default
   - TransparentFX

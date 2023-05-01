@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
 {
 
     #region
-    public int enemyhealth;
+
     public float adjust;
     public float moveSpeed = 2f;
     public Transform player;
@@ -21,8 +21,8 @@ public class EnemyController : MonoBehaviour
     private float distance;
     public float range;
     public Animator anim;
-    public PlayerTestController playerscript;
-    public int damage;
+    public GameHealth script;
+
     public SpriteRenderer sr;
     #endregion
     void Start()
@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         enemysound = this.GetComponent<AudioSource>();
         anim = this.GetComponent<Animator>();
-        playerscript.GetComponent<PlayerTestController>();
+        script.GetComponent<GameHealth>();
         sr = GetComponent<SpriteRenderer>();
         sr.color = Color.white;
     }
@@ -47,14 +47,6 @@ public class EnemyController : MonoBehaviour
         rb.rotation = angle - adjust;
         direction.Normalize();
         movement = direction;
-
-        if (enemyhealth<=0)
-        {
-            anim.SetTrigger("death");
-            Destroy(gameObject);
-
-
-        }
     }
     private void FixedUpdate()
     {
@@ -82,37 +74,17 @@ public class EnemyController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            DealDamageToPlayer();
+            script.DealDamageToPlayer();
             anim.SetTrigger("isAttacking");
             sr.color = Color.red;
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "hitbox")
-        {
 
-            DealDamage();
-        }
-    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         anim.ResetTrigger("isAttacking");
         sr.color = Color.white;
     }
 
-    private void DealDamageToPlayer()
-    {
-        
-        playerscript.health -= damage;
-        
-
-    }
-    IEnumerator DealDamage()
-    {
-        yield return new WaitForSeconds(0.5f);
-        enemyhealth--;
-        
-    }
 }
 

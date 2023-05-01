@@ -17,7 +17,6 @@ public class PlayerTestController : MonoBehaviour
     public Animator anim;
     private float timer;
     public SpriteRenderer spriteRend;
-    public int health=6;
 
 
     public void Start()
@@ -34,22 +33,6 @@ public class PlayerTestController : MonoBehaviour
     public void Update()
     {
         ProcessInputs();
-
-        IEnumerator PlayerDestruction()
-        {
-
-            yield return new WaitForSeconds(1 / 2);
-            Destroy(gameObject);
-
-        }
-
-        if (playerhealth <= 0)
-        {
-            anim.SetTrigger("death");
-            PlayerDestruction();
-            
-
-        }
     }
 
     public void FixedUpdate()
@@ -149,10 +132,5 @@ public class PlayerTestController : MonoBehaviour
                 }
             }
         }
-    }
-    IEnumerator PlayerDestruction()
-    {
-        yield return new WaitForSeconds(1 / 2);
-        Destroy(gameObject);
     }
 }

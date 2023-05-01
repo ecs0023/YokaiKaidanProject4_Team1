@@ -26,6 +26,6 @@ public class MenuController : MonoBehaviour
     }
     public void Restart()
     {
-        SceneManager.LoadScene("Intro1");
+        SceneManager.LoadScene("downstairsAndOutside");
     }
 }
