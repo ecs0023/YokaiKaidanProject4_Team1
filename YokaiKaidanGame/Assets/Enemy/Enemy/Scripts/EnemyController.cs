@@ -90,8 +90,7 @@ public class EnemyController : MonoBehaviour
     {
         anim.ResetTrigger("isAttacking");
         sr.color = Color.white;
-        moveSpeed = 6
-            ;
+        moveSpeed = 4;
         anim.SetBool("ischasing", true);
     }
 
