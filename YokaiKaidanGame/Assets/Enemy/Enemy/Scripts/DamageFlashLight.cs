@@ -16,20 +16,20 @@ public class DamageFlashLight : MonoBehaviour
     {
         
     }
-
-    public void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D enemy)
     {
-        if (collision.tag == "Otsuya")
+        if (enemy.gameObject.tag == "Otsuya")
         {
-            script.DealDamageToOtsuya();
+            script.OtsuyaHealth--;
         }
-        if (collision.tag == "Oiwa")
+        if (enemy.gameObject.tag == "Oiwa")
         {
-            script.DealDamageToOiwa();
+            script.OiwaHealth--;
         }
-        if (collision.tag == "Sato")
+        if (enemy.gameObject.tag == "Sato")
         {
-            script.DealDamageToSato();
+            script.SatoHealth--;
         }
     }
+
 }

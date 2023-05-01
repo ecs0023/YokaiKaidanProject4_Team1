@@ -17,6 +17,7 @@ public class PlayerTestController : MonoBehaviour
     public Animator anim;
     private float timer;
     public SpriteRenderer spriteRend;
+    
 
 
     public void Start()
@@ -29,6 +30,7 @@ public class PlayerTestController : MonoBehaviour
         flashlighton = false;
         spriteRend = GetComponent<SpriteRenderer>();
         spriteRend.color = Color.white;
+        
     }
     public void Update()
     {
@@ -132,5 +134,7 @@ public class PlayerTestController : MonoBehaviour
                 }
             }
         }
+
+
     }
 }

@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameHealth : MonoBehaviour
 {
-    public float PlayerHealth=6;
-    public float OtsuyaHealth=8;
-    public float OiwaHealth=8;
-    public float SatoHealth=16;
+    public int PlayerHealth=6;
+    public int OtsuyaHealth=8;
+    public int OiwaHealth=8;
+    public int SatoHealth=16;
     public GameObject Player;
     public GameObject Oiwa;
     public GameObject Sato;
@@ -47,20 +47,24 @@ public class GameHealth : MonoBehaviour
 
         }
     }
-    public void DealDamageToOtsuya()
+    public IEnumerator DealDamageToOtsuya()
     {
+        yield return new WaitForSeconds(0.5f);
         OtsuyaHealth--;
     }
-    public void DealDamageToOiwa()
+    public IEnumerator DealDamageToOiwa()
     {
+        yield return new WaitForSeconds(0.5f);
         OiwaHealth--;
     }
-    public void DealDamageToSato()
+    public IEnumerator DealDamageToSato()
     {
+        yield return new WaitForSeconds(0.5f);
         OtsuyaHealth--;
     }
     public void DealDamageToPlayer()
     {
+       
         PlayerHealth--;
     }
 
