@@ -476,7 +476,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.1
+  m_Intensity: 0.3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -38672,6 +38672,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1746287669}
     - target: {fileID: 4109967185984466426, guid: ad56293b4b8c90840b7566610be7b035, type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109967185984466426, guid: ad56293b4b8c90840b7566610be7b035, type: 3}
       propertyPath: playerscript
       value: 
       objectReference: {fileID: 1313567958}
@@ -38697,6 +38701,10 @@ PrefabInstance:
       value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 8510619470797204425, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
+      propertyPath: range
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510619470797204425, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1269330887}
@@ -38704,6 +38712,10 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 1746287669}
+    - target: {fileID: 8510619470797204425, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8510619470797204425, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
       propertyPath: enemyHealth
       value: 8
@@ -39664,6 +39676,10 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 1746287669}
+    - target: {fileID: 8510619470797204425, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8510619470797204425, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
       propertyPath: playerscript
       value: 
@@ -46148,6 +46164,50 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 100
   m_ExtrusionFactor: 0
+--- !u!1 &939794937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 939794939}
+  - component: {fileID: 939794938}
+  m_Layer: 0
+  m_Name: Quit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &939794938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939794937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f22be055859405497f4bdc18706911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &939794939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939794937}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 87.3934, y: -7.4536934, z: -0.7062448}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1007370235
 GameObject:
   m_ObjectHideFlags: 0
@@ -47023,7 +47083,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.24562263, y: 0.056682587}
@@ -47079,8 +47139,16 @@ PrefabInstance:
       value: -0.039358683
       objectReference: {fileID: 0}
     - target: {fileID: 8108683981943768066, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
+      propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108683981943768066, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
+      propertyPath: m_LightOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108683981943768066, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: m_PointLightInnerRadius
-      value: 1.7123286
+      value: 2.3065374
       objectReference: {fileID: 0}
     - target: {fileID: 8108683981943768066, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: m_PointLightOuterRadius
@@ -47195,6 +47263,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
+      propertyPath: hasBearKey
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: spriteRend
       value: 
       objectReference: {fileID: 1313567959}
@@ -47204,7 +47276,7 @@ PrefabInstance:
       objectReference: {fileID: 106127231}
     - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: playerhealth
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: notToHit.m_Bits
@@ -47604,6 +47676,21 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 8108683982839412687, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
   m_PrefabInstance: {fileID: 1269330886}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1313567965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243606527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b947a3b310e564e4c92262fadb831004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  anim: {fileID: 0}
+  lantern: {fileID: 106127217}
 --- !u!1 &1493247316
 GameObject:
   m_ObjectHideFlags: 0
@@ -55478,6 +55565,10 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 1746287669}
+    - target: {fileID: 8510619470797204425, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8510619470797204425, guid: a206f4aba56d2aa44a0d9563f85fa159, type: 3}
       propertyPath: enemyHealth
       value: 8
