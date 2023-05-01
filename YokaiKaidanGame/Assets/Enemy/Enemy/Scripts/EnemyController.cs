@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
     #region
     public int enemyHealth;
     public float adjust;
-    public float moveSpeed = 2f;
+    public float moveSpeed = 6f;
     public Transform player;
     public Rigidbody2D rb;
     private Vector2 movement;
@@ -90,7 +90,8 @@ public class EnemyController : MonoBehaviour
     {
         anim.ResetTrigger("isAttacking");
         sr.color = Color.white;
-        moveSpeed = 4;
+        moveSpeed = 6
+            ;
         anim.SetBool("ischasing", true);
     }
 
