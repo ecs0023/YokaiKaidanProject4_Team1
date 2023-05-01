@@ -16,20 +16,4 @@ public class DamageFlashLight : MonoBehaviour
     {
         
     }
-    private void OnTriggerStay2D(Collider2D enemy)
-    {
-        if (enemy.gameObject.tag == "Otsuya")
-        {
-            script.OtsuyaHealth--;
-        }
-        if (enemy.gameObject.tag == "Oiwa")
-        {
-            script.OiwaHealth--;
-        }
-        if (enemy.gameObject.tag == "Sato")
-        {
-            script.SatoHealth--;
-        }
-    }
-
 }

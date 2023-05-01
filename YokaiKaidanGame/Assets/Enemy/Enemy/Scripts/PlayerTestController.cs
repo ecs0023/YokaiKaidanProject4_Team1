@@ -17,12 +17,15 @@ public class PlayerTestController : MonoBehaviour
     public Animator anim;
     private float timer;
     public SpriteRenderer spriteRend;
-    
-
+    public GameHealth script;
+    public int l = -1;
+    //Erics stuff
+    public GameObject Lanturn;
+    public BoxCollider2D lanturnlight;
 
     public void Start()
     {
-
+        script=GetComponent<GameHealth>();
         hasHoundKey = false;
         hasBearKey = false;
         hasStagKey = false;
@@ -30,11 +33,30 @@ public class PlayerTestController : MonoBehaviour
         flashlighton = false;
         spriteRend = GetComponent<SpriteRenderer>();
         spriteRend.color = Color.white;
+        Lanturn.gameObject.SetActive(false);
+        lanturnlight=GetComponentInChildren<BoxCollider2D>();
         
     }
     public void Update()
     {
+        //PlayerMovement
         ProcessInputs();
+
+        //Equip and Unequip Light
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            l = l * -1;
+            if(l==1)
+            {
+                Lanturn.SetActive(true);
+            }
+            if(l==-1)
+            {
+                Lanturn.SetActive(false);
+            }
+
+        }
+        
     }
 
     public void FixedUpdate()
@@ -47,7 +69,8 @@ public class PlayerTestController : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
         moveDirection = new Vector2(moveX, moveY);
-        
+
+
     }
 
     public void Move()
@@ -57,6 +80,8 @@ public class PlayerTestController : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
+
+        //Doors and Keys
         if (other.gameObject.name == "HoundKey")
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -134,7 +159,8 @@ public class PlayerTestController : MonoBehaviour
                 }
             }
         }
-
+        //end of Doors and Keys
 
     }
+   
 }
