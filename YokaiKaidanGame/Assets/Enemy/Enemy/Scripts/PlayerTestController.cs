@@ -39,11 +39,12 @@ public class PlayerTestController : MonoBehaviour
     }
     public void Update()
     {
+
         //PlayerMovement
         ProcessInputs();
 
         //Equip and Unequip Light
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             l = l * -1;
             if(l==1)
@@ -162,5 +163,7 @@ public class PlayerTestController : MonoBehaviour
         //end of Doors and Keys
 
     }
-   
+
+    
+
 }

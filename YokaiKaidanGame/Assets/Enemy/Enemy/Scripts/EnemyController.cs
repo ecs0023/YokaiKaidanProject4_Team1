@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
 {
 
     #region
-
+    public int enemyHealth;
     public float adjust;
     public float moveSpeed = 2f;
     public Transform player;
@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour
     public float range;
     public Animator anim;
     public GameHealth script;
+
 
     public SpriteRenderer sr;
     #endregion
@@ -47,6 +48,11 @@ public class EnemyController : MonoBehaviour
         rb.rotation = angle - adjust;
         direction.Normalize();
         movement = direction;
+
+        if (enemyHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     private void FixedUpdate()
     {
@@ -84,6 +90,17 @@ public class EnemyController : MonoBehaviour
     {
         anim.ResetTrigger("isAttacking");
         sr.color = Color.white;
+        moveSpeed = 4;
+        anim.SetBool("ischasing", true);
+    }
+
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "hitbox")
+        {
+            moveSpeed= 0;
+            anim.SetBool("isChasing", false);
+        }
     }
 
 }

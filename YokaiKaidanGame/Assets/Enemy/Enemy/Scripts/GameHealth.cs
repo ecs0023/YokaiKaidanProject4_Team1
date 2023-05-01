@@ -10,17 +10,13 @@ public class GameHealth : MonoBehaviour
     public int OiwaHealth=8;
     public int SatoHealth=16;
     public GameObject Player;
-    public GameObject Oiwa;
-    public GameObject Sato;
-    public GameObject Otsuya;
+
 
 
     public void Start()
     {
         Player = GameObject.Find("Player");
-        Oiwa = GameObject.Find("Oiwa");
-        Otsuya = GameObject.Find("Otsuya");
-        Sato = GameObject.Find("Sato");
+
 
 
     }
@@ -32,20 +28,7 @@ public class GameHealth : MonoBehaviour
             Debug.Log("PlayerDied");
             SceneManager.LoadScene("YouLose");
         }
-        if (OtsuyaHealth <= 0)
-        {
-            Destroy(Otsuya);
-        }
-        if(OiwaHealth<=0)
-        {
-            Destroy(Oiwa);
-        }
-        if(SatoHealth<=0)
-        {
-            Destroy(Sato);
-            SceneManager.LoadScene("YouWin");
 
-        }
     }
     public IEnumerator DealDamageToOtsuya()
     {

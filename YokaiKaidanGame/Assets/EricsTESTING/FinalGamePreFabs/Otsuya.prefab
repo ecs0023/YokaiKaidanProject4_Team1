@@ -395,8 +395,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e1a0417babdbe4d9057a03cbf571e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHealth: 8
   adjust: 90
-  moveSpeed: 2
+  moveSpeed: 4
   player: {fileID: 0}
   rb: {fileID: 8510619470797204429}
   enemysound: {fileID: 8510619470797204424}

@@ -5096,16 +5096,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e1a0417babdbe4d9057a03cbf571e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyhealth: 10
+  enemyHealth: 16
   adjust: 90
-  moveSpeed: 3
+  moveSpeed: 4
   player: {fileID: 0}
   rb: {fileID: 3857356305912826074}
   enemysound: {fileID: 3857356305912826079}
   range: 8
   anim: {fileID: 3857356305912826067}
-  playerscript: {fileID: 0}
-  damage: 3
+  script: {fileID: 0}
   sr: {fileID: 3857356305912826066}
 --- !u!1 &5598080052581839244
 GameObject:
