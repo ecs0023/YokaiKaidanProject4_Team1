@@ -117,7 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4cb1b3fb8f8a94ba23168383ad713f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonclick: {fileID: 2748189617663068368}
 --- !u!82 &2748189617663068368
 AudioSource:
   m_ObjectHideFlags: 0
@@ -391,7 +390,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
     m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
@@ -661,7 +660,7 @@ MonoBehaviour:
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 0.050980397, g: 0, b: 0, a: 1}
+    topLeft: {r: 1, g: 0, b: 0, a: 1}
     topRight: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
     bottomLeft: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}

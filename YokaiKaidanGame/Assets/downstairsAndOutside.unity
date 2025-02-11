@@ -174,6 +174,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2863176818125647428, guid: 264c2c7875570490d8c68c1d35f510b4, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2863176818125647429, guid: 264c2c7875570490d8c68c1d35f510b4, type: 3}
       propertyPath: m_SortingOrder
       value: 25
@@ -39745,6 +39749,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1144386202738546581, guid: 89308795c71d14fe09b7b20ae8fb5332, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1144386202738546582, guid: 89308795c71d14fe09b7b20ae8fb5332, type: 3}
       propertyPath: m_SortingOrder
       value: 3
@@ -46913,6 +46921,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6387576799437271808, guid: 742e1673febfa4bc486a848fc8517e06, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6387576799437271810, guid: 742e1673febfa4bc486a848fc8517e06, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -47147,12 +47159,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8108683981943768066, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
+      propertyPath: m_PointLightInnerAngle
+      value: 75.081116
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108683981943768066, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
+      propertyPath: m_PointLightOuterAngle
+      value: 75.081116
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108683981943768066, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: m_PointLightInnerRadius
-      value: 2.3065374
+      value: 2.91
       objectReference: {fileID: 0}
     - target: {fileID: 8108683981943768066, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 3.4712436
+      value: 6.37
       objectReference: {fileID: 0}
     - target: {fileID: 8108683981943768125, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: m_Size.x

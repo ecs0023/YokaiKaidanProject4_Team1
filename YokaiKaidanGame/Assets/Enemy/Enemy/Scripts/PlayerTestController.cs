@@ -70,7 +70,14 @@ public class PlayerTestController : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
         moveDirection = new Vector2(moveX, moveY);
-
+        if(Mathf.Abs(moveX)>0 || Mathf.Abs(moveY) > 0)
+        {
+            anim.SetBool("isWalking",true);
+        }
+        else
+        {
+            anim.SetBool("isWalking", false);
+        }
 
     }
 
