@@ -47241,6 +47241,14 @@ PrefabInstance:
       value: hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 8108683981943768065, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108683981943768065, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108683981943768065, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.99922514
       objectReference: {fileID: 0}
@@ -47258,7 +47266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8108683981943768066, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: m_FalloffIntensity
-      value: 0.502
+      value: 0.653
       objectReference: {fileID: 0}
     - target: {fileID: 8108683981943768066, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: m_PointLightInnerAngle
@@ -47266,15 +47274,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8108683981943768066, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: m_PointLightOuterAngle
-      value: 223.44922
+      value: 318.36795
       objectReference: {fileID: 0}
     - target: {fileID: 8108683981943768066, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: m_PointLightInnerRadius
-      value: 2.98
+      value: 2.32
       objectReference: {fileID: 0}
     - target: {fileID: 8108683981943768066, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 7.42
+      value: 7.57
       objectReference: {fileID: 0}
     - target: {fileID: 8108683981943768125, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: m_Size.x

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameHealth : MonoBehaviour
 {
-    public int PlayerHealth=6;
+    public int PlayerHealth=4;
     public int OtsuyaHealth=8;
     public int OiwaHealth=8;
     public int SatoHealth=16;
