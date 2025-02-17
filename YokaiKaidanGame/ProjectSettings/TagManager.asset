@@ -13,6 +13,9 @@ TagManager:
   - Sato
   - Otsuya
   - Oiwa
+  - HoundDoor
+  - BearDoor
+  - StagDoor
   layers:
   - Default
   - TransparentFX

@@ -90,51 +90,25 @@ public class PlayerTestController : MonoBehaviour
     {
 
         //Doors and Keys
-
         if (other.gameObject.name == "HoundDoor")
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
                 if (hasHoundKey == true)
                 {
-
-                    Destroy(other.gameObject);
-                    Debug.Log("HoundKey Activated");
+                    Destroy(other.gameObject, 0.2f);
                 }
-                else
-                {
-                    Debug.Log("You need the Hound Key to open this door");
-                }
-            }
         }
-
         if (other.gameObject.name == "BearDoor")
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-
                 if (hasBearKey == true)
                 {
-                    Destroy(other.gameObject);
-                }
-                else
-                {
-                    Debug.Log("You need the Bear Key to open this door");
-                }
+                Destroy(other.gameObject, 0.2f);
             }
         }
         if (other.gameObject.name == "StagDoor")
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
                 if (hasStagKey == true)
                 {
-                    Destroy(other.gameObject);
-                }
-                else
-                {
-                    Debug.Log("You need the Stag Key to open this door");
-                }
+                Destroy(other.gameObject, 0.2f);
             }
         }
         //end of Doors and Keys

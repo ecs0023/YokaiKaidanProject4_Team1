@@ -38891,6 +38891,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoundDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 8710899744638976092, guid: 4e6bce614cbd54d109b69a78c09ed333, type: 3}
+      propertyPath: m_TagString
+      value: HoundDoor
+      objectReference: {fileID: 0}
     - target: {fileID: 8710899744953757238, guid: 4e6bce614cbd54d109b69a78c09ed333, type: 3}
       propertyPath: m_margin.w
       value: -0.19046134
@@ -38994,7 +38998,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9960f8e4bb0df3d46a648d62071d7150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1243606527}
   Canvas: {fileID: 399854491}
 --- !u!1 &623751801
 GameObject:
@@ -46253,6 +46256,11 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 100
   m_ExtrusionFactor: 0
+--- !u!1 &927145804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4359922454000442828, guid: 25c32c262b3154586bfaf46edfc60106, type: 3}
+  m_PrefabInstance: {fileID: 2029941158}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &939794937
 GameObject:
   m_ObjectHideFlags: 0
@@ -47369,21 +47377,49 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 106127217}
     - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
+      propertyPath: BearDoor
+      value: 
+      objectReference: {fileID: 1830500791}
+    - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
+      propertyPath: StagDoor
+      value: 
+      objectReference: {fileID: 927145804}
+    - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: distance
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
+      propertyPath: HoundDoor
+      value: 
+      objectReference: {fileID: 599202011}
     - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: moveSpeed
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: hasBearKey
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
+      propertyPath: hasStagKey
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: spriteRend
       value: 
       objectReference: {fileID: 1313567959}
+    - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
+      propertyPath: hasHoundKey
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
+      propertyPath: BearDoorCode
+      value: 
+      objectReference: {fileID: 1830500791}
+    - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
+      propertyPath: StagDoorCode
+      value: 
+      objectReference: {fileID: 927145804}
     - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: lanturnlight
       value: 
@@ -47392,6 +47428,10 @@ PrefabInstance:
       propertyPath: playerhealth
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
+      propertyPath: HoundDoorCode
+      value: 
+      objectReference: {fileID: 599202011}
     - target: {fileID: 8108683982839412689, guid: 789e8e31d6eca4c6bb2d0903359a28fa, type: 3}
       propertyPath: notToHit.m_Bits
       value: 1
@@ -55490,6 +55530,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
+--- !u!1 &1830500791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5576278565975497906, guid: 215c55115acf948378dd0a77c8d8e062, type: 3}
+  m_PrefabInstance: {fileID: 2054765934}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1832447256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57493,6 +57538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StagDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 4359922454000442828, guid: 25c32c262b3154586bfaf46edfc60106, type: 3}
+      propertyPath: m_TagString
+      value: StagDoor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25c32c262b3154586bfaf46edfc60106, type: 3}
 --- !u!1001 &2054765934
@@ -57504,6 +57553,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5576278565975497906, guid: 215c55115acf948378dd0a77c8d8e062, type: 3}
       propertyPath: m_Name
+      value: BearDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576278565975497906, guid: 215c55115acf948378dd0a77c8d8e062, type: 3}
+      propertyPath: m_TagString
       value: BearDoor
       objectReference: {fileID: 0}
     - target: {fileID: 5576278565975497909, guid: 215c55115acf948378dd0a77c8d8e062, type: 3}

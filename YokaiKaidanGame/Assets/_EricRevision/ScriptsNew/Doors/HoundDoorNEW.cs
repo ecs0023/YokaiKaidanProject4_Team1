@@ -30,6 +30,6 @@ public class HoundDoorNEW : MonoBehaviour
 
     public void OpenDoor()
     {
-        Destroy(gameObject);
+        Destroy(gameObject, 0.5f);
     }
 }
