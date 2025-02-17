@@ -5,13 +5,13 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
     [SerializeField] private KeyType keyType;
-
+    
     public enum KeyType
-    {
-        Hound,
-        Stag,
-        Bear
-    }
+        {
+            Hound,
+            Stag,
+            Bear
+        }
 
     public KeyType GetKeyType()
     {

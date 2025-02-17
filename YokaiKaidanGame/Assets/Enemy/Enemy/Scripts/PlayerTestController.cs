@@ -86,19 +86,10 @@ public class PlayerTestController : MonoBehaviour
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
 
         //Doors and Keys
-        if (other.gameObject.name == "HoundKey")
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                hasHoundKey = true;
-                Destroy(other.gameObject);
-                Debug.Log("You've found the Hound Key.");
-            }
-        }
 
         if (other.gameObject.name == "HoundDoor")
         {
@@ -117,16 +108,6 @@ public class PlayerTestController : MonoBehaviour
             }
         }
 
-        if (other.gameObject.name == "BearKey")
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                hasBearKey = true;
-                Destroy(other.gameObject);
-                Debug.Log("You've found the Bear Key.");
-            }
-        }
-
         if (other.gameObject.name == "BearDoor")
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -142,17 +123,6 @@ public class PlayerTestController : MonoBehaviour
                 }
             }
         }
-
-        if (other.gameObject.name == "StagKey")
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                hasStagKey = true;
-                Destroy(other.gameObject);
-                Debug.Log("You've found the Stag Key.");
-            }
-        }
-
         if (other.gameObject.name == "StagDoor")
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -170,7 +140,19 @@ public class PlayerTestController : MonoBehaviour
         //end of Doors and Keys
 
     }
+    public void HasHound()
+    {
+        hasHoundKey = true;
+    }
+    public void HasBear()
+    {
+        hasBearKey = true;
+    }
+    public void HasStag()
+    {
+        hasStagKey = true;
+    }
 
-    
+
 
 }
